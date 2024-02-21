@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="TimePlanKID" company="" webLink="http://" view-date="2024-01-29" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.2.3240" locale="da_DK">
+<?xml version="1.0" encoding="UTF-8"?><project name="TimePlanKID" company="" webLink="http://" view-date="2024-01-22" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.2.3240" locale="da_DK">
     <description/>
     <view zooming-state="default:7" id="gantt-chart">
         <field id="tpd3" name="Navn" width="200" order="0"/>
@@ -7,7 +7,7 @@
         <option id="taskLabelUp" value="name"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="color.recent">
-            <![CDATA[#ffffff]]>
+            <![CDATA[#6666ff #ff3333 #66cc00 #000000 #ffcc00 #ffffff]]>
         </option>
     </view>
     <view id="resource-table">
@@ -38,21 +38,32 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="8-Week Period" color="#8cb6ce" meeting="false" start="2024-02-07" duration="48" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true">
-            <task id="4" name="Project Plan" color="#8cb6ce" meeting="false" start="2024-02-07" duration="22" complete="0" thirdDate="2024-01-08" thirdDate-constraint="0" expand="true"/>
-            <task id="10" name="Development of Method and Data for midterm submission" color="#8cb6ce" meeting="false" start="2024-02-29" duration="21" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true"/>
-            <task id="11" name="Sparring Groups &amp; Feedback" color="#8cb6ce" meeting="false" start="2024-03-20" duration="6" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true"/>
+        <task id="0" name="8-Week Period" color="#000000" meeting="false" start="2024-02-07" duration="48" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true">
+            <task id="4" name="Project Plan" color="#ffcc00" meeting="false" start="2024-02-07" duration="22" complete="0" thirdDate="2024-01-08" thirdDate-constraint="0" expand="true"/>
+            <task id="16" name="Report Writing" color="#ff3333" meeting="false" start="2024-02-21" duration="34" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true"/>
+            <task id="18" name="Development of Method/Model for midterm submission" color="#6666ff" meeting="false" start="2024-02-15" duration="40" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true">
+                <task id="21" name="Litterature/Research Reading &amp; Review" color="#ff3333" meeting="false" start="2024-02-15" duration="27" complete="0" thirdDate="2024-01-15" thirdDate-constraint="0" expand="true"/>
+                <task id="10" name="Data Collection &amp; Feature Extraction" color="#6666ff" meeting="false" start="2024-02-21" duration="14" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true"/>
+                <task id="19" name="Model Development &amp; Evaluation" color="#6666ff" meeting="false" start="2024-03-05" duration="21" complete="0" thirdDate="2024-01-15" thirdDate-constraint="0" expand="true"/>
+                <task id="20" name="Model Refinement" color="#6666ff" meeting="false" start="2024-03-19" duration="7" complete="0" thirdDate="2024-01-15" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="11" name="Sparring Groups &amp; Feedback" color="#66cc00" meeting="false" start="2024-03-20" duration="6" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true"/>
             <task id="5" name="Easter Vacation Start" color="#ffffff" meeting="false" start="2024-03-25" duration="1" complete="0" thirdDate="2024-01-08" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="2" name="5-Week Period" color="#8cb6ce" meeting="false" start="2024-04-01" duration="33" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true">
-            <task id="12" name="Sparring Groups &amp; Feedback" color="#8cb6ce" meeting="false" start="2024-04-01" duration="2" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true"/>
-            <task id="13" name="Updated Project Plan + Development &amp; Research" color="#8cb6ce" meeting="false" start="2024-04-03" duration="30" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true"/>
-            <task id="14" name="Abstract + Pitch" color="#8cb6ce" meeting="false" start="2024-05-02" duration="2" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true"/>
+        <task id="2" name="5-Week Period" color="#000000" meeting="false" start="2024-04-01" duration="33" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true">
+            <task id="22" name="Development of Model" color="#6666ff" meeting="false" start="2024-04-01" duration="33" complete="0" thirdDate="2024-01-15" thirdDate-constraint="0" expand="true">
+                <task id="25" name="Model Refinement &amp; Generalization" color="#6666ff" meeting="false" start="2024-04-01" duration="21" complete="0" thirdDate="2024-04-13" thirdDate-constraint="0" expand="true"/>
+                <task id="24" name="Final Testing &amp; Analysis of the Model" color="#6666ff" meeting="false" start="2024-04-13" duration="21" complete="0" thirdDate="2024-01-15" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="17" name="Report Writing" color="#ff3333" meeting="false" start="2024-04-01" duration="33" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true"/>
+            <task id="14" name="Abstract + Pitch" color="#66cc00" meeting="false" start="2024-05-02" duration="2" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true"/>
+            <task id="13" name="Updated Project Plan" color="#ffcc00" meeting="false" start="2024-04-03" duration="30" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true"/>
+            <task id="12" name="Sparring Groups &amp; Feedback" color="#66cc00" meeting="false" start="2024-04-01" duration="2" complete="0" thirdDate="2024-01-22" thirdDate-constraint="0" expand="true"/>
             <task id="6" name="Easter Vacation End" color="#ffffff" meeting="false" start="2024-04-01" duration="1" complete="0" thirdDate="2024-01-01" thirdDate-constraint="0" expand="true"/>
             <task id="7" name="Summer Vacation Start" color="#ffffff" meeting="false" start="2024-05-03" duration="1" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="3" name="3-Week Period" color="#8cb6ce" meeting="false" start="2024-06-06" duration="17" complete="0" thirdDate="2024-01-15" thirdDate-constraint="0" expand="true">
-            <task id="15" name="Final Touches + Exam Preparation" color="#8cb6ce" meeting="false" start="2024-06-06" duration="17" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true"/>
+        <task id="3" name="3-Week Period" color="#000000" meeting="false" start="2024-06-06" duration="17" complete="0" thirdDate="2024-01-15" thirdDate-constraint="0" expand="true">
+            <task id="15" name="Final Touches on Report + Exam Preparation" color="#ff3333" meeting="false" start="2024-06-06" duration="17" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true"/>
             <task id="8" name="Summer Vacation End" color="#ffffff" meeting="false" start="2024-06-06" duration="1" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true"/>
             <task id="9" name="Project is Finished" color="#ffffff" meeting="false" start="2024-06-22" duration="1" complete="0" thirdDate="2024-01-29" thirdDate-constraint="0" expand="true"/>
         </task>
