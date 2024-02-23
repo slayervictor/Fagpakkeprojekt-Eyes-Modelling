@@ -1,0 +1,64 @@
+Eye tracking (ET) is a process of measuring the position and movement of the point of
+        gaze of the eyes. These measurements are recorded using an eye tracker. The eye
+        tracker works by directing a camera with a infrared light illumination towards the center
+        of the eyes, the pupil [18]. This will show as reflections in both the pupil and the cornea,
+        also called pupil center corneal reflections (PCCR), and this reflection is tracked by the
+        infrared cameras. The system will use the images of these reflections and processes it
+        using the vector between the pupil center and the corneal reflections, to provide a gaze
+         point in x­ and y­coordinates, according to the visual field. The importance of using the
+        infrared light, is due to the high accuracy of the gaze direction [19]. This is due to the
+        infrared light creating great contrast between the pupil and the iris, so the pupil and cornea
+        are easily detected. There are two general types of infrared eye­tracking techniques; the
+        bright pupil system and the dark pupil system [20]. The differences between these two are
+        mainly the position of the infrared light source. The bright pupil system uses the infrared
+        light source on the same axis as the camera, which causes the light to reflect the retina
+        through the pupil. This is similar to the ”red eye” effect seen in photographs. This method
+        generally works best in dimly lit rooms, with consistent illumination and with pale blue
+        eyed respondents. The dark pupil system uses the infrared light source off­axis from the
+        camera, which causes the light to enter the eye, reflect off of the retina and exit the eye
+        off­axis away from the camera. This makes the pupil appear darker than the rest of the
+        eye [21]. This method is more robust to varying light conditions and dark eyed or small
+        pupil sized respondents. Figure 2.4 illustrates the differences in the two methods.
+
+
+        ---
+
+         live in a house near the mountains. I have two brothers and one sister, and I was born last. My father teaches mathematics, and my mother is a nurse at a big hospital. My brothers are very smart and work hard in school. My sister is a nervous girl, but she is very kind. My grandmother also lives with us. She came from Italy when I was two years old. She has grown old, but she is still very strong. She cooks the best food!
+
+        My family is very important to me. We do lots of things together. My brothers and I like to go on long walks in the mountains. My sister likes to cook with my grandmother. On the weekends we all play board games together. We laugh and always have a good time. I love my family very much.
+
+
+        ---
+
+        The deadliest virus in modern history, perhaps of all time, was the 1918 Spanish Flu. It killed about 20 to 50 million people worldwide, perhaps more. The total death toll is unknown because medical records were not kept in many areas.
+
+        The pandemic hit during World War I and devastated military troops. In the United States, for instance, more servicemen were killed from the flu than from the war itself. The Spanish flu was fatal to a higher proportion of young adults than most flu viruses.
+
+        The pandemic started mildly, in the spring of 1918, but was followed by a much more severe wave in the fall of 1918. The war likely contributed to the devastating mortality numbers, as large outbreaks occurred in military forces living in close quarters. Poor nutrition and the unsanitary conditions of war camps had an effect.
+
+        A third wave occurred in the winter and spring of 1919, and a fourth, smaller wave occurred in a few areas in spring 1920. Initial symptoms of the flu were typical: sore throat, headache, and fever. The flu often progressed rapidly to cause severe pneumonia and sometimes hemorrhage in the lungs and mucus membranes. A characteristic feature of severe cases of the Spanish Flu was heliotrope cyanosis, where the patient’s face turned blue from lack of oxygen in the cells. Death usually followed within hours or days.
+
+        Modern medicine such as vaccines, antivirals, and antibiotics for secondary infections were not available at that time, so medical personnel couldn’t do much more than try to relieve symptoms.
+
+        The flu ended when it had infected enough people that those who were susceptible had either died or developed immunity.
+
+        ---
+
+        Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.
+
+        Keith loves baseball, and he made sure to take a visit to Wrigley Field. Not only did he take a tour of this spectacular stadium, but he also got to watch a Chicago Cubs game. In the stadium, Keith and the other fans cheered for the Cubs. Keith was happy that the Cubs won with a score of 5-4.
+
+        Chicago has many historic places to visit. Keith found the Chicago Water Tower impressive as it is one of the few remaining landmarks to have survived the Great Chicago Fire of 1871. Keith also took a walk through Jackson Park, a great outdoor space that hosted the World’s Fair of 1892. The park is great for a leisurely stroll, and it still features some of the original architecture and replicas of monuments that were featured in the World’s Fair.
+
+        During the last part of his visit, Keith managed to climb the stairs inside of the Willis Tower, a 110-story skyscraper. Despite the challenge of climbing the many flights of stairs, Keith felt that reaching the top was worth the effort. From the rooftop, Keith received a gorgeous view of the city’s skyline with Lake Michigan in the background.
+
+        ---
+        Last April, John took a trip to Las Vegas, Nevada. Las Vegas is a popular destination in the western portion of the United States. The town is most popular for its casinos, hotels, and exciting nightlife.
+
+        In downtown Las Vegas, John spent a lot of time on The Strip, which is a 2.5 mile stretch of shopping, entertainment venues, luxury hotels, and fine dining experiences. This is probably the most commonly visited tourist area in the city. The Strip at night looks especially beautiful. All of the buildings light up with bright, neon, eye-catching signs to attract visitor attention.
+
+        A stay in Las Vegas can feel similar to a visit to many popular cities worldwide. Many of the hotels have miniature versions of important international sites and monuments. These famous landmarks include the Eiffel Tower, Venice, and even ancient Rome.
+
+        One day, John took a side trip outside of the city to visit the Grand Canyon, one of the Seven Wonders of the Natural World. The canyon offers a breathtaking view of Nevada’s ridges and natural landscape. John especially liked the canyon because it was removed from all of the noise and movement in downtown Las Vegas.
+
+        John had a great time during his trip to Las Vegas. He did not win a lot of money in the casinos. However, he managed to see a lot of amazing sites during his visit to this city that never sleeps.

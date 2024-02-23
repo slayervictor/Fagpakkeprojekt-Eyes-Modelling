@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eye Tracking</title>
+<style>
+  /* CSS for styling the page */
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background-color: white; /* White background */
+  }
+
+  p {
+    font-size: 30px; /* Adjust the font size as needed */
+    color: black; /* Text color */
+  }
+</style>
+</head>
+<body>
+
+<p><!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Page</title>
+    <style>
+      /* CSS for styling the page */
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full height of the viewport */
+        background-color: white; /* White background */
+      }
+    
+      p {
+        font-size: 24px; /* Adjust the font size as needed */
+        color: black; /* Text color */
+        line-height: 2;
+      }
+
+      body > * {
+    max-width: 1000px;
+    margin: auto; /* This targets all direct children of <body> */
+    padding: 20px;
+}
+
+    </style>
+    </head>
+    <body>
+    
+        <p id="randomParagraph">Loading...</p>
+    
+
+
+    <script>
+            // Function to fetch the text file and display a random paragraph
+            function displayRandomParagraph() {
+              fetch('text.txt') // Adjust the path if necessary
+                .then(response => response.text())
+                .then(text => {
+                  // Split the text into paragraphs based on your chosen delimiter
+                  const paragraphs = text.split('---'); // Adjust the delimiter if necessary
+                  // Choose a random paragraph
+                  const randomIndex = Math.floor(Math.random() * paragraphs.length);
+                  const randomParagraph = paragraphs[randomIndex].trim();
+                  // Display the paragraph in the page
+                  document.getElementById('randomParagraph').textContent = randomParagraph;
+                })
+                .catch(error => console.error('Error loading the text file:', error));
+            }
+            
+            // Call the function when the page loads
+            window.onload = displayRandomParagraph;
+        </script>
+            
+    </body>
+    </html>
+    </p>
+
+</body>
+</html>
