@@ -81,7 +81,6 @@ target/
 # IPython
 profile_default/
 ipython_config.py
-data
 license_key_00395217_-_DTU_Compute_IS404-100106440114
 licensefile.py
 # pyenv
