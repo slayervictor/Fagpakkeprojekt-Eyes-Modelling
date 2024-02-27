@@ -2,7 +2,7 @@
 #
 import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
-filename = 'data/'+'gaze_data4.csv'# "data/gaze_data3.csv" # you have to create the csv file beforehand.
+filename = 'data\\'+'gaze_data69.csv'# "data/gaze_data3.csv" # you have to create the csv file beforehand.
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
 import numpy as np
