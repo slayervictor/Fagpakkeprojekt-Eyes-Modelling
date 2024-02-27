@@ -83,6 +83,7 @@ profile_default/
 ipython_config.py
 data
 license_key_00395217_-_DTU_Compute_IS404-100106440114
+licensefile.py
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:

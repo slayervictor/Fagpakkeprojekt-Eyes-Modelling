@@ -1,6 +1,7 @@
 # Preface here
 #
-license_file='license_key_00395217_-_DTU_Compute_IS404-100106440114'
+import licensefile
+license_file = licensefile.license_file
 filename = "gaze_data2.csv" # you have to create the csv file beforehand.
 
 
