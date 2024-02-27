@@ -1,4 +1,15 @@
 How to experiment
 
+1. Kallibrer på computeren 3 gange.
+
+2. Python fil køres.
+
+3. Efter python filen er sat igang åbnes et vindue
+
+
+
+
+
+
 
 

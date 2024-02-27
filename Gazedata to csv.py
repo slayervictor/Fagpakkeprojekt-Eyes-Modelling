@@ -2,8 +2,7 @@
 #
 import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
-filename = 'gaze_data4.csv'# "data/gaze_data3.csv" # you have to create the csv file beforehand.
-
+filename = 'data\\'+'gaze_data69.csv'# "data/gaze_data3.csv" # you have to create the csv file beforehand.
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
 import numpy as np
@@ -14,7 +13,7 @@ import os
 import pylsl as lsl
 import sys
 import csv
-
+start_time = 0
 def save_gaze_data_to_csv(gaze_data, filename):
     print(gaze_data[0])
     try:
@@ -58,7 +57,7 @@ def save_gaze_data_to_csv(gaze_data, filename):
 
             for data in gaze_data:
                 row = {
-                    'device_time_stamp': data[0],
+                    'device_time_stamp': (start_time),
                     'left_gaze_origin_validity': data[1],
                     'right_gaze_origin_validity': data[2],
                     'left_gaze_origin_in_user_x': data[3],
@@ -273,6 +272,7 @@ outlet = setup_lsl()
 
 # Main loop; run until escape is pressed
 print("%14.3f: LSL Running; press CTRL-C repeatedly to stop" % lsl.local_clock())
+start_time+=1
 start_gaze_tracking()
 try:
     while not halted:
