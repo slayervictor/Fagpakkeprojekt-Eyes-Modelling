@@ -4,6 +4,6 @@
 ├───IDT
 │   └───test_case
 ├───Licenses
-    └───licensefile.py
-    └───IS404-...Licensefile.txt
+│   └───licensefile.py
+│   └───IS404-...Licensefile.txt
 └───__pycache__
