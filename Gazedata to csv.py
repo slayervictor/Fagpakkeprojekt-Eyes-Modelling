@@ -1,6 +1,6 @@
 # Preface here
 #
-import licensefile
+import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
 filename = "gaze_data2.csv" # you have to create the csv file beforehand.
 
