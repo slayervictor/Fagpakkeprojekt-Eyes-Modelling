@@ -7,7 +7,15 @@ How to experiment
 3. Efter python filen er sat igang åbnes et vindue
 
 
+kalibrer
+kør python script
+python scriptet åbner en browser vindue med en dot i midten, så folk kigger først på den.
+python scriptet skifter til tekstfilen. # Rækkefølgen af tekstfilerne og bestemt mængde tid eller ?
+Person læser tekstfilerne. 
 
+evt. tryk, når personen er done.
+
+ny person kommer til. 
 
 
 
