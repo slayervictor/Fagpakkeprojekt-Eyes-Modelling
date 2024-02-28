@@ -2,7 +2,7 @@
 #
 import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
-filename = 'data\\'+'gaze_data69.csv'# "data/gaze_data3.csv" # you have to create the csv file beforehand.
+filename = 'data\\'+'gaze_data71.csv'# "data/gaze_data3.csv" # you have to create the csv file beforehand.
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
 import numpy as np
@@ -57,7 +57,7 @@ def save_gaze_data_to_csv(gaze_data, filename):
 
             for data in gaze_data:
                 row = {
-                    'device_time_stamp': (start_time),
+                    'device_time_stamp': data[0],
                     'left_gaze_origin_validity': data[1],
                     'right_gaze_origin_validity': data[2],
                     'left_gaze_origin_in_user_x': data[3],
