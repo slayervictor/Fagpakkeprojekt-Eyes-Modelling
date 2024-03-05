@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eye Tracking</title>
 <style>
-  /* CSS for styling the page */
   body {
     margin: 0;
     padding: 0;
@@ -16,77 +15,100 @@
     background-color: white; /* White background */
   }
 
-  p {
-    font-size: 30px; /* Adjust the font size as needed */
-    color: black; /* Text color */
-  }
 </style>
 </head>
 <body>
 
-<p><!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Page</title>
-    <style>
-      /* CSS for styling the page */
-      
-      body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* Full height of the viewport */
-        background-color: white; /* White background */
-      }
-    
-      p {
-        font-size: 24px; /* Adjust the font size as needed */
-        color: black; /* Text color */
-        line-height: 2;
-      }
+<p id="randomParagraph">Loading...</p>
 
-      body > * {
-    max-width: 1000px;
-    margin: auto; /* This targets all direct children of <body> */
-    padding: 20px;
-}
-
-    </style>
-    </head>
-    <body>
-    
-        <p id="randomParagraph">Loading...</p>
+<script>
+ 
+  let fontSizeIndex = 2; // Default font size index
+  const fontSizes = [24, 30, 36, 42, 48]; // Font sizes array
 
 
+  function changeFontSize() {
+    const fontSize = fontSizes[fontSizeIndex];
+    document.getElementById('randomParagraph').style.fontSize = fontSize + 'px';
+  }
 
-    <script>
-            // Function to fetch the text file and display a random paragraph
-            function displayRandomParagraph() {
-              fetch('text.txt') // Adjust the path if necessary
-                .then(response => response.text())
-                .then(text => {
-                  // Split the text into paragraphs based on your chosen delimiter
-                  const paragraphs = text.split('---'); // Adjust the delimiter if necessary
-                  // Choose a random paragraph
-                  const randomIndex = Math.floor(Math.random() * paragraphs.length);
-                  const randomParagraph = paragraphs[randomIndex].trim();
-                  // Display the paragraph in the page
-                  document.getElementById('randomParagraph').textContent = randomParagraph;
-                })
-                .catch(error => console.error('Error loading the text file:', error));
-            }
-            
-            // Call the function when the page loads
-            window.onload = displayRandomParagraph;
-        </script>
-            
-    </body>
-    </html>
-    </p>
+
+  let fontFamilyIndex = 0; 
+  const fontFamilies = [
+    "HecatonchiresExp A-77-240-77",
+    "HecatonchiresExp B-80-270-80",
+    "HecatonchiresExp C-83-300-82",
+    "HecatonchiresExp D-86-330-83",
+    "HecatonchiresExp E-90-360-84",
+    "HecatonchiresExp F-94-390-85",
+    "HecatonchiresExp G-98-440-86"
+  ];
+
+  
+  function changeFontFamily() {
+    const fontFamily = fontFamilies[fontFamilyIndex];
+    document.getElementById('randomParagraph').style.fontFamily = fontFamily;
+  }
+
+  // Function to fetch the text file and display a random paragraph
+  function displayRandomParagraph() {
+    fetch('text.txt') // Adjust the path if necessary
+      .then(response => response.text())
+      .then(text => {
+        // Split the text into paragraphs based on your chosen delimiter
+        const paragraphs = text.split('---'); // Adjust the delimiter if necessary
+        // Choose a random paragraph
+        const randomIndex = Math.floor(Math.random() * paragraphs.length);
+        const randomParagraph = paragraphs[randomIndex].trim();
+        // Display the paragraph in the page
+        document.getElementById('randomParagraph').textContent = randomParagraph;
+      })
+      .catch(error => console.error('Error loading the text file:', error));
+  }
+
+  // Call the function when the page loads
+  window.onload = displayRandomParagraph;
+
+  // Event listener
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+      // Decrease the font size index
+      fontSizeIndex = (fontSizeIndex - 1 + fontSizes.length) % fontSizes.length;
+      // Change the font size
+      changeFontSize();
+    }
+  });
+
+  // Event listener
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowRight') {
+      // Increase the font size index
+      fontSizeIndex = (fontSizeIndex + 1) % fontSizes.length;
+      // Change the font size
+      changeFontSize();
+    }
+  });
+
+  // Event listene
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowUp') {
+      // Increase the font family index
+      fontFamilyIndex = (fontFamilyIndex + 1) % fontFamilies.length;
+      // Change the font family
+      changeFontFamily();
+    }
+  });
+
+  // Event listener 
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowDown') {
+      // Decrease the font family index
+      fontFamilyIndex = (fontFamilyIndex - 1 + fontFamilies.length) % fontFamilies.length;
+      // Change the font family
+      changeFontFamily();
+    }
+  });
+</script>
 
 </body>
 </html>
