@@ -1,6 +1,7 @@
 How to experiment
 
 1. Kallibrer på computeren 3 gange.
+2. sæt max lysstyrke på pågældende PC
 
 2. Python fil køres.
 
