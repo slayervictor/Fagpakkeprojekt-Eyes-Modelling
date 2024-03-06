@@ -232,32 +232,19 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
         sts = gaze_data['system_time_stamp'] / 1000000.
 
         outlet.push_sample(unpack_gaze_data(gaze_data), sts)
-        
+        stamp = time.time() - start_time
         # Append the received gaze data to the list
-        gaze_data['device_time_stamp'] = time.time() - start_time
+        gaze_data['device_time_stamp'] = stamp
         #print(gaze_data['text_file'])
         
-        new_gaze_data = {
-                    'device_time_stamp': gaze_data['device_time_stamp'],
-                    'system_time_stamp': gaze_data['system_time_stamp'],
-                    'left_gaze_point_on_display_area': gaze_data['left_gaze_point_on_display_area'],
-                    'left_gaze_point_in_user_coordinate_system': gaze_data['left_gaze_point_in_user_coordinate_system'],
-                    'left_gaze_point_validity': gaze_data['left_gaze_point_validity'],
-                    'left_pupil_diameter': gaze_data['left_pupil_diameter'],
-                    'left_pupil_validity': gaze_data['left_pupil_validity'],
-                    'left_gaze_origin_in_user_coordinate_system': gaze_data['left_gaze_origin_in_user_coordinate_system'],
-                    'left_gaze_origin_in_trackbox_coordinate_system': gaze_data['left_gaze_origin_in_trackbox_coordinate_system'],
-                    'left_gaze_origin_validity': gaze_data['left_gaze_origin_validity'],
-                    'right_pupil_diameter': gaze_data['right_pupil_diameter'],
-                    'right_pupil_validity': gaze_data['right_pupil_validity'],
-                    'right_gaze_origin_in_user_coordinate_system': gaze_data['right_gaze_origin_in_user_coordinate_system'],
-                    'right_gaze_origin_in_trackbox_coordinate_system': gaze_data['right_gaze_origin_in_trackbox_coordinate_system'],
-                    'right_gaze_origin_validity': gaze_data['right_gaze_origin_validity'],
+        additonal_data = {
+                    'device_time_stamp' : stamp,
                     'text_file' : fetch_text_file(),
                     'font_size' : fetch_font_size(),
                     'font_name' : fetch_font()
 
                 }
+        
         gaze_data_list.append(unpack_gaze_data(gaze_data))
        # gaze_data_list.append(1) # dataen for size sample 
     
