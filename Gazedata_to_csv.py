@@ -13,7 +13,7 @@ import os
 import pylsl as lsl
 import sys
 import csv
-start_time = 0
+
 def save_gaze_data_to_csv(gaze_data, filename):
     print(gaze_data[0])
     try:
@@ -51,8 +51,8 @@ def save_gaze_data_to_csv(gaze_data, filename):
                 'left_pupil_diameter',
                 'right_pupil_diameter',
                 'text_file',
-                'font_size_or_spacing',
-                'contrast_level'
+                'font_size',
+                'font_name'
             ]
 
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
@@ -60,7 +60,7 @@ def save_gaze_data_to_csv(gaze_data, filename):
 
             for data in gaze_data:
                 row = {
-                    'device_time_stamp': (start_time),
+                    'device_time_stamp': data[0],
                     'left_gaze_origin_validity': data[1],
                     'right_gaze_origin_validity': data[2],
                     'left_gaze_origin_in_user_x': data[3],
@@ -92,12 +92,13 @@ def save_gaze_data_to_csv(gaze_data, filename):
                     'left_pupil_diameter': data[29],
                     'right_pupil_diameter': data[30],
             
-                    'text_file' : data[31],
-                    'font_size_or_spacing' : 2,
-                    'contrast_level' : 3
+                    'text_file' : data[-3],
+                    'font_size' : data[-2],
+                    'font_name' : data[-1]
 
                 }
                 writer.writerow(row)
+                
 
         print(f"Gaze data saved to {filename} successfully.")
     except Exception as e:
@@ -157,11 +158,20 @@ gaze_stuff = [
     ('left_pupil_diameter',  1),
     ('right_pupil_diameter',  1)
 ]
-   
+
+
+def fetch_text_file():
+    return 69
+
+def fetch_font_size():
+    return 420
+
+def fetch_font():
+    return "nice"
+
 
 def unpack_gaze_data(gaze_data):
     x = []
-    i = 0
     for s in gaze_stuff:
         d = gaze_data[s[0]]
         
@@ -169,8 +179,6 @@ def unpack_gaze_data(gaze_data):
             x = x + list(d)
         else:
             x.append(d)
-            
-        i+=1
     return x
 
 last_report = 0
@@ -179,7 +187,7 @@ N = 0
 gaze_data_list = []
 #i=0
 
-def gaze_data_callback(gaze_data):
+def gaze_data_callback(gaze_data): # Pretty much the main loop:
     '''send gaze data'''
 
     '''
@@ -211,6 +219,9 @@ def gaze_data_callback(gaze_data):
     #for k in sorted(gaze_data.keys()):
     #    print(' ' + k + ': ' +  str(gaze_data[k]))
 
+    # Pretty much the main loop:
+    for column_name in gaze_data.keys():
+        print(column_name)
     try:
         global last_report
         global outlet
@@ -221,10 +232,21 @@ def gaze_data_callback(gaze_data):
         sts = gaze_data['system_time_stamp'] / 1000000.
 
         outlet.push_sample(unpack_gaze_data(gaze_data), sts)
-
+        stamp = time.time() - start_time
         # Append the received gaze data to the list
+        gaze_data['device_time_stamp'] = stamp
+        #print(gaze_data['text_file'])
+        
+        additonal_data = {
+                    'device_time_stamp' : stamp,
+                    'text_file' : fetch_text_file(),
+                    'font_size' : fetch_font_size(),
+                    'font_name' : fetch_font()
+
+                }
+        
         gaze_data_list.append(unpack_gaze_data(gaze_data))
-        #gaze_data_list.append(i) # dataen for size sample 
+       # gaze_data_list.append(1) # dataen for size sample 
     
         #i+=1
        
@@ -242,6 +264,8 @@ def gaze_data_callback(gaze_data):
 
 
 def start_gaze_tracking():
+    global start_time
+    start_time = time.time()
     mt.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dictionary=True)
     return True
 
@@ -282,14 +306,13 @@ def setup_lsl():
                         .append_child_value("type", 'ET')
 
     outlet = lsl.StreamOutlet(info)
-
+    
     return outlet
 
 outlet = setup_lsl()
 
 # Main loop; run until escape is pressed
 print("%14.3f: LSL Running; press CTRL-C repeatedly to stop" % lsl.local_clock())
-start_time+=1
 start_gaze_tracking()
 try:
     while not halted:
