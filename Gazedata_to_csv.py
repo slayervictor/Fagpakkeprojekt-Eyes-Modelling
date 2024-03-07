@@ -13,9 +13,11 @@ import os
 import pylsl as lsl
 import sys
 import csv
+import pandas as pd
 
 def save_gaze_data_to_csv(gaze_data, filename):
-    print(gaze_data[0])
+    #print(gaze_data[0])
+    print("GD LEN:",len(gaze_data))
     try:
         with open(filename, mode='w', newline='') as csv_file:
             fieldnames = [
@@ -92,9 +94,7 @@ def save_gaze_data_to_csv(gaze_data, filename):
                     'left_pupil_diameter': data[29],
                     'right_pupil_diameter': data[30],
             
-                    'text_file' : data[-3],
-                    'font_size' : data[-2],
-                    'font_name' : data[-1]
+                    
 
                 }
                 writer.writerow(row)
@@ -187,6 +187,8 @@ N = 0
 gaze_data_list = []
 #i=0
 
+additional_features = []
+
 def gaze_data_callback(gaze_data): # Pretty much the main loop:
     '''send gaze data'''
 
@@ -220,8 +222,8 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
     #    print(' ' + k + ': ' +  str(gaze_data[k]))
 
     # Pretty much the main loop:
-    for column_name in gaze_data.keys():
-        print(column_name)
+    #for column_name in gaze_data.keys():
+     #   print(column_name)
     try:
         global last_report
         global outlet
@@ -236,14 +238,8 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
         # Append the received gaze data to the list
         gaze_data['device_time_stamp'] = stamp
         #print(gaze_data['text_file'])
-        
-        additonal_data = {
-                    'device_time_stamp' : stamp,
-                    'text_file' : fetch_text_file(),
-                    'font_size' : fetch_font_size(),
-                    'font_name' : fetch_font()
-
-                }
+        additional_features.append([stamp,fetch_text_file(),fetch_font_size(),fetch_font()])
+        #print(additional_features)
         
         gaze_data_list.append(unpack_gaze_data(gaze_data))
        # gaze_data_list.append(1) # dataen for size sample 
@@ -262,6 +258,15 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
 
         halted = True
 
+def import_additional_features(features):
+    print(len(features))
+    features[:,0] = round(features[:,0],4)
+    print(features[:,0])
+    features = np.array(features)
+    df = pd.read_csv(filename)
+    timestamps = pd.to_numeric(df['device_time_stamp']) 
+    print(timestamps.round(4))
+    print(features[:,0])
 
 def start_gaze_tracking():
     global start_time
@@ -274,6 +279,12 @@ def end_gaze_tracking():
     if gaze_data_list:
         
         save_gaze_data_to_csv(gaze_data_list, filename)
+        print("Importing additional features...")
+        time.sleep(3)
+        import_additional_features(additional_features)
+        print("Complete. Ready for shutdown")
+
+        
     mt.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, gaze_data_callback)
    
     return True
