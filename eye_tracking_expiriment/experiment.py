@@ -16,7 +16,7 @@ import csv
 import pandas as pd
 import tkinter as tk
 def read_text(filen):
-    with open(filen, 'r') as file:
+    with open(filen, 'r', encoding='utf-8') as file:
         return file.read()
 
 Sequence = ['eye_tracking_expiriment\start.txt',
