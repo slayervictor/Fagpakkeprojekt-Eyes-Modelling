@@ -37,6 +37,8 @@ for file in Sequence:
 font_size=[20]
 font_family=['Arial']
 current_text_index = 0
+AI_or_OR=99
+Author=99
 
 
 root = tk.Tk()
@@ -57,6 +59,16 @@ def close_window(event=None):
 canvas = tk.Canvas(root, width=1600, height=1200)
 canvas.pack()
 
+def parse_filename_details(filename):
+    # Assuming filename format is 'Ai_HC_P01_text.txt' or similar
+    parts = os.path.basename(filename).split('_')
+    if len(parts) >= 3:
+        text_type = parts[0]  # 'Ai' or 'OR'
+        author = parts[1]  # 'HC', 'SK', or 'KB'
+        passage = parts[2]  # 'P01' - 'P10'
+        return text_type, author, passage
+    else:
+        return "Unknown", "Unknown", "Unknown"
 
 # Start position for the text
 
@@ -78,10 +90,14 @@ def navigate_text(event):
         if current_text_index < len(texts) - 1:
             current_text_index += 1
             draw_text()
+            print(current_text_index)
     elif event.keysym == 'Left':
         if current_text_index > 1:
             current_text_index -= 1
             draw_text()
+            print(current_text_index)
+
+    
 
 
 
@@ -228,15 +244,30 @@ gaze_stuff = [
 ]
 
 
-def fetch_text_file():
+def fetch_text_file(): # Passagetal. 
+    
     return current_text_index
 
-def fetch_font_size():
+def fetch_font_size(): # Skriftstørrelse
     return font_size[0]
 
-def fetch_font():
+def fetch_font(): # Skrifttype
     return font_family[0]
 
+def fetch_author():
+    # Fetches the author from the current text filename
+    _, author, _ = parse_filename_details(Sequence[current_text_index])
+    return author
+
+def fetch_type():
+    # Fetches the text type (Ai or OR) from the current text filename
+    text_type, _, _ = parse_filename_details(Sequence[current_text_index])
+    return text_type
+
+def fetch_passage():
+    # Fetches the passage number from the current text filename
+    _, _, passage = parse_filename_details(Sequence[current_text_index])
+    return passage
 
 def unpack_gaze_data(gaze_data):
     x = []
@@ -306,7 +337,7 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
         # Append the received gaze data to the list
         gaze_data['device_time_stamp'] = stamp
         #print(gaze_data['text_file'])
-        additional_features.append([stamp,fetch_text_file(),fetch_font_size(),fetch_font()])
+        additional_features.append([stamp,fetch_text_file(),fetch_font_size(),fetch_font(),fetch_author(),fetch_type(),fetch_passage()])
         #print(additional_features)
         
         gaze_data_list.append(unpack_gaze_data(gaze_data))
@@ -336,7 +367,7 @@ def import_additional_features(features):
         if matching_row:
             matched_data.append(matching_row[1:])  
 
-    df_matched_data = pd.DataFrame(matched_data, columns=["text_file","font_size","font_name"])
+    df_matched_data = pd.DataFrame(matched_data, columns=["text_file","font_size","font_name","author","AI","passage"])
     df_combined = pd.concat([df_csv, df_matched_data], axis=1)
 
     df_combined.to_csv(filename, index=False)
@@ -405,6 +436,7 @@ root.bind('<Escape>', close_window)
 # Main loop; run until escape is pressed
 print("%14.3f: LSL Running; press CTRL-C repeatedly to stop" % lsl.local_clock())
 start_gaze_tracking()
+
 try:
     while not halted:
         time.sleep(1)
@@ -413,6 +445,7 @@ try:
             if keys[0]=='escape':
                 halted = True
         root.mainloop()
+    
         if halted:
             break
 
