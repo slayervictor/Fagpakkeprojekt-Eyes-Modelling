@@ -36,6 +36,8 @@ for file in Sequence:
 font_size=[20]
 font_family=['Arial']
 current_text_index = 0
+AI_or_OR=99
+Author=99
 
 
 root = tk.Tk()
@@ -56,6 +58,16 @@ def close_window(event=None):
 canvas = tk.Canvas(root, width=1600, height=1200)
 canvas.pack()
 
+def parse_filename_details(filename):
+    # Assuming filename format is 'Ai_HC_P01_text.txt' or similar
+    parts = os.path.basename(filename).split('_')
+    if len(parts) >= 3:
+        text_type = parts[0]  # 'Ai' or 'OR'
+        author = parts[1]  # 'HC', 'SK', or 'KB'
+        passage = parts[2]  # 'P01' - 'P10'
+        return text_type, author, passage
+    else:
+        return "Unknown", "Unknown", "Unknown"
 
 # Start position for the text
 
@@ -77,10 +89,14 @@ def navigate_text(event):
         if current_text_index < len(texts) - 1:
             current_text_index += 1
             draw_text()
+            print(current_text_index)
     elif event.keysym == 'Left':
         if current_text_index > 1:
             current_text_index -= 1
             draw_text()
+            print(current_text_index)
+
+    
 
 
 
@@ -227,13 +243,14 @@ gaze_stuff = [
 ]
 
 
-def fetch_text_file():
+def fetch_text_file(): # Passagetal. 
+    
     return current_text_index
 
-def fetch_font_size():
+def fetch_font_size(): # Skriftstørrelse
     return font_size[0]
 
-def fetch_font():
+def fetch_font(): # Skrifttype
     return font_family[0]
 
 def fetch_author():
@@ -419,6 +436,7 @@ root.bind('<Escape>', close_window)
 # Main loop; run until escape is pressed
 print("%14.3f: LSL Running; press CTRL-C repeatedly to stop" % lsl.local_clock())
 start_gaze_tracking()
+
 try:
     while not halted:
         
