@@ -1,15 +1,16 @@
 # Preface here
 #
+import os
 import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
-filename = 'eye_tracking_expiriment\data\\'+'gaze_data80.csv'# "data/gaze_data3.csv" # you have to create the csv file beforehand.
+existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if file.startswith('gaze_data'))
+filename = f'eye_tracking_expiriment\data\gaze_data{existing_files}.csv'
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
 import numpy as np
 import tobii_research as tr
 import time
 import random
-import os
 import pylsl as lsl
 import sys
 import csv
@@ -35,7 +36,6 @@ for file in Sequence:
 # Setting the font and size
 font_size=[20]
 font_family=['Arial']
-
 current_text_index = 0
 
 
@@ -48,6 +48,8 @@ root.resizable(width=False, height=False)
 def close_window(event=None):
     global current_text_index
     current_text_index = 999 #pga shutdown
+    global halted
+    halted = True
     root.destroy()
 
 # Create the text widget
@@ -85,7 +87,7 @@ def navigate_text(event):
 
 def save_gaze_data_to_csv(gaze_data, filename):
     #print(gaze_data[0])
-    print("GD LEN:",len(gaze_data))
+    
     try:
         with open(filename, mode='w', newline='') as csv_file:
             fieldnames = [
@@ -329,19 +331,14 @@ def import_additional_features(features):
     df_csv = pd.read_csv(csv_file_path)
     matched_data = []
     for index, row in df_csv.iterrows():
-        timestamp = round(row[0])  # Assuming timestamps are in the first column and rounding for matching
+        timestamp = round(row[0]) 
         matching_row = next((x for x in features if round(x[0]) == timestamp), None)
         if matching_row:
-            matched_data.append(matching_row[1:])  # Excluding the timestamp column
-    print("features: ",features)
-    print("df:",df_csv)
-    # Convert matched data to dataframe
-    df_matched_data = pd.DataFrame(matched_data, columns=["text_file","font_size","font_name"])
+            matched_data.append(matching_row[1:])  
 
-    # Append matched data to the original dataframe
+    df_matched_data = pd.DataFrame(matched_data, columns=["text_file","font_size","font_name"])
     df_combined = pd.concat([df_csv, df_matched_data], axis=1)
 
-    # Save the combined dataframe back to CSV
     df_combined.to_csv(filename, index=False)
 
 def start_gaze_tracking():
