@@ -2,7 +2,7 @@
 #
 import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
-filename = 'data\\'+'gaze_data80.csv'# "data/gaze_data3.csv" # you have to create the csv file beforehand.
+filename = 'eye_tracking_expiriment\data\\'+'gaze_data80.csv'# "data/gaze_data3.csv" # you have to create the csv file beforehand.
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
 import numpy as np
@@ -14,6 +14,74 @@ import pylsl as lsl
 import sys
 import csv
 import pandas as pd
+import tkinter as tk
+def read_text(filen):
+    with open(filen, 'r') as file:
+        return file.read()
+
+Sequence = ['eye_tracking_expiriment\start.txt',
+'eye_tracking_expiriment\Ai_HC_P01_text.txt','eye_tracking_expiriment\Ai_HC_P01_MCQ.txt','eye_tracking_expiriment\Ai_HC_P01_FIBQ.txt',
+'eye_tracking_expiriment\Ai_HC_P02_text.txt','eye_tracking_expiriment\Ai_HC_P02_MCQ.txt','eye_tracking_expiriment\Ai_HC_P02_FIBQ.txt',
+'eye_tracking_expiriment\Ai_HC_P03_text.txt','eye_tracking_expiriment\Ai_HC_P03_MCQ.txt','eye_tracking_expiriment\Ai_HC_P03_FIBQ.txt',
+'eye_tracking_expiriment\Ai_HC_P04_text.txt','eye_tracking_expiriment\Ai_HC_P04_MCQ.txt','eye_tracking_expiriment\Ai_HC_P04_FIBQ.txt',
+'eye_tracking_expiriment\Ai_HC_P05_text.txt','eye_tracking_expiriment\Ai_HC_P05_MCQ.txt','eye_tracking_expiriment\Ai_HC_P05_FIBQ.txt',
+'eye_tracking_expiriment\Ai_HC_P06_text.txt','eye_tracking_expiriment\Ai_HC_P06_MCQ.txt','eye_tracking_expiriment\Ai_HC_P06_FIBQ.txt',
+]
+texts=[]
+
+for file in Sequence:
+    texts.append(read_text(file))
+
+# Setting the font and size
+font_size=[20]
+font_family=['Arial']
+
+current_text_index = 0
+
+
+root = tk.Tk()
+root.title('Text display')
+#root.geometry('1600x1200')
+root.attributes('-fullscreen', True)
+root.resizable(width=False, height=False)
+
+def close_window(event=None):
+    global current_text_index
+    current_text_index = 999 #pga shutdown
+    root.destroy()
+
+# Create the text widget
+
+canvas = tk.Canvas(root, width=1600, height=1200)
+canvas.pack()
+
+
+# Start position for the text
+
+x_position = 50
+y_position = 100
+
+def draw_text():
+    global current_text_index
+    canvas.delete('all')
+    canvas.create_text(x_position, y_position, text=texts[current_text_index], font=(font_family[0], font_size[0]), anchor='nw')
+    canvas.update()
+
+
+draw_text()
+
+def navigate_text(event):
+    global current_text_index
+    if event.keysym == 'Right':
+        if current_text_index < len(texts) - 1:
+            current_text_index += 1
+            draw_text()
+    elif event.keysym == 'Left':
+        if current_text_index > 1:
+            current_text_index -= 1
+            draw_text()
+
+
 
 def save_gaze_data_to_csv(gaze_data, filename):
     #print(gaze_data[0])
@@ -159,13 +227,13 @@ gaze_stuff = [
 
 
 def fetch_text_file():
-    return 0
+    return current_text_index
 
 def fetch_font_size():
-    return 0
+    return font_size[0]
 
 def fetch_font():
-    return ""
+    return font_family[0]
 
 
 def unpack_gaze_data(gaze_data):
@@ -329,6 +397,13 @@ def setup_lsl():
     return outlet
 
 outlet = setup_lsl()
+# Bind arrow keys to the navigate_text function
+root.bind('<Left>', navigate_text)
+root.bind('<Right>', navigate_text)
+
+root.bind('<Escape>', close_window)
+
+# Start the GUI event loop
 
 # Main loop; run until escape is pressed
 print("%14.3f: LSL Running; press CTRL-C repeatedly to stop" % lsl.local_clock())
@@ -340,7 +415,7 @@ try:
         if len(keys) != 0:
             if keys[0]=='escape':
                 halted = True
-
+        root.mainloop()
         if halted:
             break
 
