@@ -26,8 +26,7 @@ Sequence = ['eye_tracking_expiriment\start.txt',
 'eye_tracking_expiriment\Ai_HC_P03_text.txt','eye_tracking_expiriment\Ai_HC_P03_MCQ.txt','eye_tracking_expiriment\Ai_HC_P03_FIBQ.txt',
 'eye_tracking_expiriment\Ai_HC_P04_text.txt','eye_tracking_expiriment\Ai_HC_P04_MCQ.txt','eye_tracking_expiriment\Ai_HC_P04_FIBQ.txt',
 'eye_tracking_expiriment\Ai_HC_P05_text.txt','eye_tracking_expiriment\Ai_HC_P05_MCQ.txt','eye_tracking_expiriment\Ai_HC_P05_FIBQ.txt',
-'eye_tracking_expiriment\Ai_HC_P06_text.txt','eye_tracking_expiriment\Ai_HC_P06_MCQ.txt','eye_tracking_expiriment\Ai_HC_P06_FIBQ.txt',
-]
+'eye_tracking_expiriment\Ai_HC_P06_text.txt','eye_tracking_expiriment\Ai_HC_P06_MCQ.txt','eye_tracking_expiriment\Ai_HC_P06_FIBQ.txt']
 texts=[]
 
 for file in Sequence:
@@ -237,6 +236,15 @@ def fetch_font_size():
 def fetch_font():
     return font_family[0]
 
+def fetch_author():
+    #eye_tracking_expiriment\Ai_HC_P01_text.txt  Ai_
+    tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\","")
+    tempSeq = tempSeq.replace(tempSeq[:3],"")
+    if tempSeq == "rt":
+        return "Start"
+    else:
+        return tempSeq[:2]
+
 
 def unpack_gaze_data(gaze_data):
     x = []
@@ -297,6 +305,7 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
         global outlet
         global N
         global halted
+        global seq
         #global i
 
         sts = gaze_data['system_time_stamp'] / 1000000.
@@ -304,9 +313,14 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
         outlet.push_sample(unpack_gaze_data(gaze_data), sts)
         stamp = time.time() - start_time
         # Append the received gaze data to the list
+
+            
         gaze_data['device_time_stamp'] = stamp
         #print(gaze_data['text_file'])
-        additional_features.append([stamp,fetch_text_file(),fetch_font_size(),fetch_font()])
+        try:
+            additional_features.append([stamp,fetch_text_file(),fetch_font_size(),fetch_font(),fetch_author(),Sequence[current_text_index].replace("eye_tracking_expiriment\\","")[:2]=="Ai"])
+        except:
+            pass
         #print(additional_features)
         
         gaze_data_list.append(unpack_gaze_data(gaze_data))
@@ -336,7 +350,7 @@ def import_additional_features(features):
         if matching_row:
             matched_data.append(matching_row[1:])  
 
-    df_matched_data = pd.DataFrame(matched_data, columns=["text_file","font_size","font_name"])
+    df_matched_data = pd.DataFrame(matched_data, columns=["text_file","font_size","font_name","Author","AI"])
     df_combined = pd.concat([df_csv, df_matched_data], axis=1)
 
     df_combined.to_csv(filename, index=False)
@@ -407,12 +421,14 @@ print("%14.3f: LSL Running; press CTRL-C repeatedly to stop" % lsl.local_clock()
 start_gaze_tracking()
 try:
     while not halted:
+        
         time.sleep(1)
         keys = ()  # event.getKeys()
         if len(keys) != 0:
             if keys[0]=='escape':
                 halted = True
         root.mainloop()
+        
         if halted:
             break
 
