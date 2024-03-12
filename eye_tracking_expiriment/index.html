@@ -30,6 +30,8 @@
   function changeFontSize() {
     const fontSize = fontSizes[fontSizeIndex];
     document.getElementById('randomParagraph').style.fontSize = fontSize + 'px';
+    // send font family to python server
+    fetch('https://localhost:8000/update?family=${fontSize}').catch(console.error)
   }
 
 
@@ -48,6 +50,8 @@
   function changeFontFamily() {
     const fontFamily = fontFamilies[fontFamilyIndex];
     document.getElementById('randomParagraph').style.fontFamily = fontFamily;
+    // send font family to python server
+    fetch('https://localhost:8000/update?family=${fontFamily}').catch(console.error)
   }
 
   // Function to fetch the text file and display a random paragraph
