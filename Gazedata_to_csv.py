@@ -52,9 +52,8 @@ def save_gaze_data_to_csv(gaze_data, filename):
                 'right_pupil_validity',
                 'left_pupil_diameter',
                 'right_pupil_diameter',
-                'text_file',
-                'font_size',
-                'font_name'
+                'text_index'
+    
             ]
 
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
