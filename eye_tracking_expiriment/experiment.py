@@ -243,8 +243,11 @@ gaze_stuff = [
 ]
 
 
-def fetch_text_file(): # Passagetal. 
-    
+def fetch_text_file(): # navn på filen. 
+    tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\","")
+    return tempSeq
+
+def fetch_passage_index(): # index på hvilken fil det er.
     return current_text_index
 
 def fetch_font_size(): # Skriftstørrelse
@@ -335,7 +338,7 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
         gaze_data['device_time_stamp'] = stamp
         #print(gaze_data['text_file'])
         try:
-            additional_features.append([stamp,fetch_text_file(),fetch_font_size(),fetch_font(),fetch_author(),Sequence[current_text_index].replace("eye_tracking_expiriment\\","")[:2]=="Ai"])
+            additional_features.append([stamp,fetch_text_file(),fetch_passage_index(),fetch_font_size(),fetch_font(),fetch_author(),Sequence[current_text_index].replace("eye_tracking_expiriment\\","")[:2]=="Ai"])
         except:
             pass
         #print(additional_features)
@@ -367,7 +370,7 @@ def import_additional_features(features):
         if matching_row:
             matched_data.append(matching_row[1:])  
 
-    df_matched_data = pd.DataFrame(matched_data, columns=["text_file","font_size","font_name","Author","AI"])
+    df_matched_data = pd.DataFrame(matched_data, columns=["text_file","passage_index","font_size","font_name","Author","AI"])
     df_combined = pd.concat([df_csv, df_matched_data], axis=1)
 
     df_combined.to_csv(filename, index=False)
