@@ -33,8 +33,8 @@ for file in Sequence:
     texts.append(read_text(file))
 
 # Setting the font and size
-font_size=[20]
-font_family=['Arial']
+font_size=[20,16]
+font_family=['Arial','Times New Roman']
 current_text_index = 0
 
 
@@ -56,26 +56,17 @@ def close_window(event=None):
 canvas = tk.Canvas(root, width=1600, height=1200)
 canvas.pack()
 
-def parse_filename_details(filename):
-    # Assuming filename format is 'Ai_HC_P01_text.txt' or similar
-    parts = os.path.basename(filename).split('_')
-    if len(parts) >= 3:
-        text_type = parts[0]  # 'Ai' or 'OR'
-        author = parts[1]  # 'HC', 'SK', or 'KB'
-        passage = parts[2]  # 'P01' - 'P10'
-        return text_type, author, passage
-    else:
-        return "Unknown", "Unknown", "Unknown"
-
 # Start position for the text
 
-x_position = 50
-y_position = 100
+x_position = 250
+y_position = 150
 
+# Function to draw text with uniform appearance
 def draw_text():
     global current_text_index
     canvas.delete('all')
-    canvas.create_text(x_position, y_position, text=texts[current_text_index], font=(font_family[0], font_size[0]), anchor='nw')
+    text = texts[current_text_index]
+    canvas.create_text(x_position, y_position, text=text, font=(font_family[0], font_size[0]), anchor='nw', justify='left', width=1200)
     canvas.update()
 
 
@@ -323,8 +314,7 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
         global outlet
         global N
         global halted
-        global seq
-        #global i
+        global Sequence
 
         sts = gaze_data['system_time_stamp'] / 1000000.
 
@@ -334,17 +324,14 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
 
             
         gaze_data['device_time_stamp'] = stamp
-        #print(gaze_data['text_file'])
+        
         try:
             additional_features.append([stamp,Sequence[current_text_index].find("_text") >= 0,fetch_text_file(),fetch_passage_index(),fetch_font_size(),fetch_font(),fetch_author(),Sequence[current_text_index].replace("eye_tracking_expiriment\\","")[:2]=="Ai"])
         except:
             pass
-        #print(additional_features)
+        
         
         gaze_data_list.append(unpack_gaze_data(gaze_data))
-       # gaze_data_list.append(1) # dataen for size sample 
-    
-        #i+=1
        
         if sts > last_report + 5:
             sys.stdout.write("%14.3f: %10d packets\r" % (sts, N))
@@ -380,19 +367,20 @@ def start_gaze_tracking():
     return True
 
 def end_gaze_tracking():
-    print("End gaze")
+    
     if gaze_data_list:
-        
         save_gaze_data_to_csv(gaze_data_list, filename)
-        print("Importing additional features...")
-        time.sleep(3)
-        import_additional_features(additional_features)
-        print("Complete. Ready for shutdown")
-
         
+        print("Importing additional features...")
+        import_additional_features(additional_features)
+        print("Additional features imported.")
+    else:
+        print("No gaze data collected.")
+
     mt.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, gaze_data_callback)
-   
+    print("Unsubscribed from gaze data stream.")
     return True
+
 
 halted = False
 
@@ -438,6 +426,7 @@ root.bind('<Escape>', close_window)
 print("%14.3f: LSL Running; press CTRL-C repeatedly to stop" % lsl.local_clock())
 start_gaze_tracking()
 
+
 try:
     while not halted:
         
@@ -456,5 +445,6 @@ try:
 except:
     print("Halting...")
 
-print("terminating tracking now")
+print("Terminating...")
 end_gaze_tracking()
+sys.exit()
