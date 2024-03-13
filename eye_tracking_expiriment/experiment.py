@@ -36,8 +36,6 @@ for file in Sequence:
 font_size=[20]
 font_family=['Arial']
 current_text_index = 0
-AI_or_OR=99
-Author=99
 
 
 root = tk.Tk()
@@ -263,7 +261,7 @@ def fetch_author():
     if tempSeq == "rt":
         return "Start"
     else:
-        return tempSeq[:2]
+        return tempSeq[:2].replace("rt","Start Page")
 
 
 def unpack_gaze_data(gaze_data):
@@ -338,7 +336,7 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
         gaze_data['device_time_stamp'] = stamp
         #print(gaze_data['text_file'])
         try:
-            additional_features.append([stamp,fetch_text_file(),fetch_passage_index(),fetch_font_size(),fetch_font(),fetch_author(),Sequence[current_text_index].replace("eye_tracking_expiriment\\","")[:2]=="Ai"])
+            additional_features.append([stamp,Sequence[current_text_index].find("_text") >= 0,fetch_text_file(),fetch_passage_index(),fetch_font_size(),fetch_font(),fetch_author(),Sequence[current_text_index].replace("eye_tracking_expiriment\\","")[:2]=="Ai"])
         except:
             pass
         #print(additional_features)
@@ -370,7 +368,7 @@ def import_additional_features(features):
         if matching_row:
             matched_data.append(matching_row[1:])  
 
-    df_matched_data = pd.DataFrame(matched_data, columns=["text_file","passage_index","font_size","font_name","Author","AI"])
+    df_matched_data = pd.DataFrame(matched_data, columns=["Reading","text_file","passage_index","font_size","font_name","Author","AI"])
     df_combined = pd.concat([df_csv, df_matched_data], axis=1)
 
     df_combined.to_csv(filename, index=False)
