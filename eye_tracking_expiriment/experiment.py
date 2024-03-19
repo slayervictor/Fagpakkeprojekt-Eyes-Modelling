@@ -21,12 +21,8 @@ def read_text(filen):
         return file.read()
 
 Sequence = ['eye_tracking_expiriment\start.txt',
-'eye_tracking_expiriment\Ai_HC_P01_text.txt','eye_tracking_expiriment\Ai_HC_P01_MCQ.txt','eye_tracking_expiriment\Ai_HC_P01_FIBQ.txt',
-'eye_tracking_expiriment\Ai_HC_P02_text.txt','eye_tracking_expiriment\Ai_HC_P02_MCQ.txt','eye_tracking_expiriment\Ai_HC_P02_FIBQ.txt',
-'eye_tracking_expiriment\Ai_HC_P03_text.txt','eye_tracking_expiriment\Ai_HC_P03_MCQ.txt','eye_tracking_expiriment\Ai_HC_P03_FIBQ.txt',
-'eye_tracking_expiriment\Ai_HC_P04_text.txt','eye_tracking_expiriment\Ai_HC_P04_MCQ.txt','eye_tracking_expiriment\Ai_HC_P04_FIBQ.txt',
-'eye_tracking_expiriment\Ai_HC_P05_text.txt','eye_tracking_expiriment\Ai_HC_P05_MCQ.txt','eye_tracking_expiriment\Ai_HC_P05_FIBQ.txt',
-'eye_tracking_expiriment\Ai_HC_P06_text.txt','eye_tracking_expiriment\Ai_HC_P06_MCQ.txt','eye_tracking_expiriment\Ai_HC_P06_FIBQ.txt']
+'eye_tracking_expiriment\Ai_HC_P01_text.txt','eye_tracking_expiriment\Ai_HC_P01_MCQ.txt','eye_tracking_expiriment\Ai_HC_P01_FIBQ.txt'
+]
 texts=[]
 
 for file in Sequence:

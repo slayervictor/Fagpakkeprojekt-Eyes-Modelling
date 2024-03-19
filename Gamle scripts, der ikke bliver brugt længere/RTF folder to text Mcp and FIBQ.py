@@ -50,6 +50,6 @@ def process_all_rtf_files(folder_path):
         extract_sections_from_rtf(rtf_filename)
 
 # Call the function with the path to your folder containing RTF files
-folder_path = 'C:\\Users\\s224228\\Documents\\Fagpakkeprojekt-Eyes-Modelling\\Text_passges'
+folder_path = 'C:\\Users\s224228\\Documents\\Fagpakkeprojekt-Eyes-Modelling\\Ting fra supervisor\\Text_passges'
 wrap_width = 80
 process_all_rtf_files(folder_path)
