@@ -1,8 +1,11 @@
 # pip install striprtf
 import re
 from striprtf.striprtf import rtf_to_text
+import glob
+import os
+from textwrap import wrap
 
-def extract_sections_from_rtf(rtf_path):
+def extract_sections_from_rtf(rtf_path, wrap_width=80):
     with open(rtf_path, 'r') as file:
         rtf_content = file.read()
         text = rtf_to_text(rtf_content)
@@ -15,7 +18,10 @@ def extract_sections_from_rtf(rtf_path):
 
     # Assume that the sections are in order: text, MCQ, FIBQ
     if len(sections) >= 3:
-        text_content, mcq_content, fibq_content = sections[:3]
+        # Wrap each section to the specified width
+        text_content = '\n'.join(wrap(sections[0], width=wrap_width))
+        mcq_content = '\n'.join(wrap(sections[1], width=wrap_width))
+        fibq_content = '\n'.join(wrap(sections[2], width=wrap_width))
     else:
         print(f"Not enough sections in file: {rtf_path}")
         return
@@ -34,8 +40,16 @@ def extract_sections_from_rtf(rtf_path):
         f.write(fibq_content)
 
 
-# For a single file
 
-# Example usage
-rtf_filename = 'C:\\Users\\s224228\\Downloads\\Text_passges\\Text_passges\\AI_HC_P01.rtf' # give the name and path
-extract_sections_from_rtf(rtf_filename)
+def process_all_rtf_files(folder_path):
+    # Use glob to find all RTF files in the folder
+    rtf_files = glob.glob(os.path.join(folder_path, '*.rtf'))
+
+    for rtf_filename in rtf_files:
+        print(f"Processing {rtf_filename}")
+        extract_sections_from_rtf(rtf_filename)
+
+# Call the function with the path to your folder containing RTF files
+folder_path = 'C:\\Users\\s224228\\Documents\\Fagpakkeprojekt-Eyes-Modelling\\Text_passges'
+wrap_width = 80
+process_all_rtf_files(folder_path)
