@@ -33,8 +33,13 @@ for file in Sequence:
     texts.append(read_text(file))
 
 # Setting the font and size
-font_size=[20,16]
 font_family=['Arial','Times New Roman']
+font_size=[20,16]
+fontIndex = 0
+fontDetails = [[1,0,1],[0,1,2]] # Hvilken passage der skal have hvilken font, eks [[font_family_index , font_size_index , passage],[...]]  -  default (index 0) er Arial
+font_sizeIndex = 0
+
+
 current_text_index = 0
 
 
@@ -43,6 +48,22 @@ root.title('Text display')
 #root.geometry('1600x1200')
 root.attributes('-fullscreen', True)
 root.resizable(width=False, height=False)
+
+def changeFontDetails():
+    global fontIndex
+    global font_sizeIndex
+    currentPassage = fetch_passage_number()
+    changed = False
+    for i in range(0,len(fontDetails)):
+        if (fontDetails[i][2]) == currentPassage:
+            fontIndex = fontDetails[i][0]
+            font_sizeIndex = fontDetails[i][1]
+            changed = True
+
+    if not changed: 
+        fontIndex = 0
+        font_sizeIndex = 0
+        
 
 def close_window(event=None):
     global current_text_index
@@ -66,7 +87,7 @@ def draw_text():
     global current_text_index
     canvas.delete('all')
     text = texts[current_text_index]
-    canvas.create_text(x_position, y_position, text=text, font=(font_family[0], font_size[0]), anchor='nw', justify='left', width=1200)
+    canvas.create_text(x_position, y_position, text=text, font=(font_family[fontIndex], font_size[font_sizeIndex]), anchor='nw', justify='left', width=1200)
     canvas.update()
 
 
@@ -77,13 +98,15 @@ def navigate_text(event):
     if event.keysym == 'Right':
         if current_text_index < len(texts) - 1:
             current_text_index += 1
+            changeFontDetails()
             draw_text()
-            print(current_text_index)
+            #print(fetch_passage_number())
     elif event.keysym == 'Left':
         if current_text_index > 1:
             current_text_index -= 1
+            changeFontDetails()
             draw_text()
-            print(current_text_index)
+            #print(fetch_passage_number())
 
     
 
@@ -236,14 +259,20 @@ def fetch_text_file(): # navn på filen.
     tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\","")
     return tempSeq
 
-def fetch_passage_index(): # index på hvilken fil det er.
-    return current_text_index
+def fetch_passage_number(): # index på hvilken fil det er.
+    seq = Sequence[current_text_index].replace("eye_tracking_expiriment\\","")
+    if seq == "start.txt":
+        return 0
+    else:
+        return int(seq.replace(seq[:7],"").replace(".txt","")[:2])
+
 
 def fetch_font_size(): # Skriftstørrelse
-    return font_size[0]
+    
+    return font_size[font_sizeIndex]
 
 def fetch_font(): # Skrifttype
-    return font_family[0]
+    return font_family[fontIndex]
 
 def fetch_author():
     #eye_tracking_expiriment\Ai_HC_P01_text.txt  Ai_
@@ -326,7 +355,7 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
         gaze_data['device_time_stamp'] = stamp
         
         try:
-            additional_features.append([stamp,Sequence[current_text_index].find("_text") >= 0,fetch_text_file(),fetch_passage_index(),fetch_font_size(),fetch_font(),fetch_author(),Sequence[current_text_index].replace("eye_tracking_expiriment\\","")[:2]=="Ai"])
+            additional_features.append([stamp,Sequence[current_text_index].find("_text") >= 0,fetch_text_file(),fetch_passage_number(),fetch_font_size(),fetch_font(),fetch_author(),Sequence[current_text_index].replace("eye_tracking_expiriment\\","")[:2]=="Ai"])
         except:
             pass
         
