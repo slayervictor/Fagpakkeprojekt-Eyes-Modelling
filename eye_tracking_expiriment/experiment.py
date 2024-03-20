@@ -1,4 +1,4 @@
-# Preface here
+# Preface heretk
 #
 import os
 import Licenses.licensefile as licensefile
@@ -21,7 +21,17 @@ def read_text(filen):
         return file.read()
 
 Sequence = ['eye_tracking_expiriment\start.txt',
-'eye_tracking_expiriment\Ai_HC_P01_text.txt','eye_tracking_expiriment\Ai_HC_P01_MCQ.txt','eye_tracking_expiriment\Ai_HC_P01_FIBQ.txt'
+            
+            
+'eye_tracking_expiriment\AI_HC_P01_text.txt','eye_tracking_expiriment\AI_HC_P01_MCQ.txt','eye_tracking_expiriment\AI_HC_P01_FIBQ.txt',
+'eye_tracking_expiriment\OR_HC_P01_text.txt','eye_tracking_expiriment\OR_HC_P01_MCQ.txt','eye_tracking_expiriment\OR_HC_P01_FIBQ.txt',
+
+'eye_tracking_expiriment\AI_SK_P01_text.txt','eye_tracking_expiriment\AI_SK_P01_MCQ.txt','eye_tracking_expiriment\AI_SK_P01_FIBQ.txt',
+'eye_tracking_expiriment\OR_SK_P01_text.txt','eye_tracking_expiriment\OR_SK_P01_MCQ.txt','eye_tracking_expiriment\OR_SK_P01_FIBQ.txt',
+
+'eye_tracking_expiriment\AI_KB_P01_text.txt','eye_tracking_expiriment\AI_KB_P01_MCQ.txt','eye_tracking_expiriment\AI_KB_P01_FIBQ.txt',
+'eye_tracking_expiriment\OR_KB_P01_text.txt','eye_tracking_expiriment\OR_KB_P01_MCQ.txt','eye_tracking_expiriment\OR_KB_P01_FIBQ.txt'
+
 ]
 texts=[]
 
@@ -32,7 +42,17 @@ for file in Sequence:
 font_family=['Arial','Times New Roman']
 font_size=[20,16]
 fontIndex = 0
-fontDetails = [[1,0,1],[0,1,2]] # Hvilken passage der skal have hvilken font, eks [[font_family_index , font_size_index , passage],[...]]  -  default (index 0) er Arial
+# Ændre til [1,1,passagetal], når vi kører anden omgang af eksperimenter
+testPerson = 2
+def modStuff(tp,fontBool):
+    if fontBool:
+        if tp%2 == 0:
+            return 1
+        else: return 0
+    else:
+        return tp%2
+            
+fontDetails = [[modStuff(testPerson,False),modStuff(testPerson,True),1]] # Hvilken passage der skal have hvilken font, eks [[font_family_index , font_size_index , passage],[...]]  -  default (index 0) er Arial
 font_sizeIndex = 0
 
 
