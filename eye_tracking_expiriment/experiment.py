@@ -46,11 +46,18 @@ fontIndex = 0
 testPerson = 2
 def modStuff(tp,fontBool):
     if fontBool:
-        if tp%2 == 0:
+        if tp%4 == 0:
+            return 0
+        elif tp%4 == 1: 
+            return 0
+        elif tp%4 == 2:
             return 1
-        else: return 0
+        elif tp%4 == 3:
+            return 1
     else:
         return tp%2
+    
+
             
 fontDetails = [[modStuff(testPerson,False),modStuff(testPerson,True),1]] # Hvilken passage der skal have hvilken font, eks [[font_family_index , font_size_index , passage],[...]]  -  default (index 0) er Arial
 font_sizeIndex = 0
