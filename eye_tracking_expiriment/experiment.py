@@ -19,12 +19,12 @@ import tkinter as tk
 def read_text(filen):
     with open(filen, 'r', encoding='utf-8') as file:
         return file.read()
-
+testPerson = 2
 Sequence = ['eye_tracking_expiriment\start.txt',
             
             
-'eye_tracking_expiriment\AI_HC_P01_text.txt','eye_tracking_expiriment\AI_HC_P01_MCQ.txt','eye_tracking_expiriment\AI_HC_P01_FIBQ.txt',
-'eye_tracking_expiriment\OR_HC_P01_text.txt','eye_tracking_expiriment\OR_HC_P01_MCQ.txt','eye_tracking_expiriment\OR_HC_P01_FIBQ.txt',
+f'eye_tracking_expiriment\AI_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\AI_HC_P0{testPerson}_MCQ.txt','eye_tracking_expiriment\AI_HC_P01_FIBQ.txt',
+f'eye_tracking_expiriment\OR_HC_P0{testPerson}_text.txt','eye_tracking_expiriment\OR_HC_P01_MCQ.txt','eye_tracking_expiriment\OR_HC_P01_FIBQ.txt',
 
 'eye_tracking_expiriment\AI_SK_P01_text.txt','eye_tracking_expiriment\AI_SK_P01_MCQ.txt','eye_tracking_expiriment\AI_SK_P01_FIBQ.txt',
 'eye_tracking_expiriment\OR_SK_P01_text.txt','eye_tracking_expiriment\OR_SK_P01_MCQ.txt','eye_tracking_expiriment\OR_SK_P01_FIBQ.txt',
@@ -43,7 +43,7 @@ font_family=['Arial','Times New Roman']
 font_size=[20,16]
 fontIndex = 0
 # Ændre til [1,1,passagetal], når vi kører anden omgang af eksperimenter
-testPerson = 2
+
 def modStuff(tp,fontBool):
     if fontBool:
         if tp%4 == 0:
