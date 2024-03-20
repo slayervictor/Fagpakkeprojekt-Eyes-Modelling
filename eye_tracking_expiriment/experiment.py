@@ -64,6 +64,7 @@ font_sizeIndex = 0
 
 
 current_text_index = 0
+max_current_text_index = 0
 
 
 root = tk.Tk()
@@ -118,17 +119,22 @@ draw_text()
 
 def navigate_text(event):
     global current_text_index
+    global max_current_text_index
     if event.keysym == 'Right':
         if current_text_index < len(texts) - 1:
             current_text_index += 1
             changeFontDetails()
             draw_text()
+            if current_text_index > max_current_text_index:
+                max_current_text_index +=1
             #print(fetch_passage_number())
     elif event.keysym == 'Left':
         if current_text_index > 1:
             current_text_index -= 1
             changeFontDetails()
             draw_text()
+            if current_text_index > max_current_text_index:
+                max_current_text_index +=1
             #print(fetch_passage_number())
 
     
@@ -289,6 +295,11 @@ def fetch_passage_number(): # index på hvilken fil det er.
     else:
         return int(seq.replace(seq[:7],"").replace(".txt","")[:2])
 
+def fetch_label():
+    if max_current_text_index > current_text_index:
+        return "Skimming"
+    else:
+        return "Immersive"
 
 def fetch_font_size(): # Skriftstørrelse
     
@@ -378,7 +389,7 @@ def gaze_data_callback(gaze_data): # Pretty much the main loop:
         gaze_data['device_time_stamp'] = stamp
         
         try:
-            additional_features.append([stamp,Sequence[current_text_index].find("_text") >= 0,fetch_text_file(),fetch_passage_number(),fetch_font_size(),fetch_font(),fetch_author(),Sequence[current_text_index].replace("eye_tracking_expiriment\\","")[:2]=="Ai"])
+            additional_features.append([stamp,Sequence[current_text_index].find("_text") >= 0,fetch_text_file(),fetch_passage_number(),fetch_font_size(),fetch_font(),fetch_author(),Sequence[current_text_index].replace("eye_tracking_expiriment\\","")[:2]=="Ai",fetch_label()])
         except:
             pass
         
@@ -407,7 +418,7 @@ def import_additional_features(features):
         if matching_row:
             matched_data.append(matching_row[1:])  
 
-    df_matched_data = pd.DataFrame(matched_data, columns=["Reading","text_file","passage_index","font_size","font_name","Author","AI"])
+    df_matched_data = pd.DataFrame(matched_data, columns=["Reading","text_file","passage_index","font_size","font_name","Author","AI","Label"])
     df_combined = pd.concat([df_csv, df_matched_data], axis=1)
 
     df_combined.to_csv(filename, index=False)
