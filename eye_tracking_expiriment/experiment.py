@@ -23,14 +23,14 @@ testPerson = 2
 Sequence = ['eye_tracking_expiriment\start.txt',
             
             
-f'eye_tracking_expiriment\AI_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\AI_HC_P0{testPerson}_MCQ.txt','eye_tracking_expiriment\AI_HC_P01_FIBQ.txt',
-f'eye_tracking_expiriment\OR_HC_P0{testPerson}_text.txt','eye_tracking_expiriment\OR_HC_P01_MCQ.txt','eye_tracking_expiriment\OR_HC_P01_FIBQ.txt',
+f'eye_tracking_expiriment\AI_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\AI_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\AI_HC_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\OR_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\OR_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\OR_HC_P0{testPerson}_FIBQ.txt',
 
-'eye_tracking_expiriment\AI_SK_P01_text.txt','eye_tracking_expiriment\AI_SK_P01_MCQ.txt','eye_tracking_expiriment\AI_SK_P01_FIBQ.txt',
-'eye_tracking_expiriment\OR_SK_P01_text.txt','eye_tracking_expiriment\OR_SK_P01_MCQ.txt','eye_tracking_expiriment\OR_SK_P01_FIBQ.txt',
+f'eye_tracking_expiriment\AI_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\AI_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\AI_SK_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\OR_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\OR_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\OR_SK_P0{testPerson}_FIBQ.txt',
 
-'eye_tracking_expiriment\AI_KB_P01_text.txt','eye_tracking_expiriment\AI_KB_P01_MCQ.txt','eye_tracking_expiriment\AI_KB_P01_FIBQ.txt',
-'eye_tracking_expiriment\OR_KB_P01_text.txt','eye_tracking_expiriment\OR_KB_P01_MCQ.txt','eye_tracking_expiriment\OR_KB_P01_FIBQ.txt'
+f'eye_tracking_expiriment\AI_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\AI_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\AI_KB_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\OR_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\OR_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\OR_KB_P0{testPerson}_FIBQ.txt'
 
 ]
 texts=[]
