@@ -1,4 +1,4 @@
-# Preface heretk
+# Preface here
 #
 import os
 import Licenses.licensefile as licensefile
@@ -23,14 +23,14 @@ testPerson = 1
 Sequence = ['eye_tracking_expiriment\start.txt',
             
             
-f'eye_tracking_expiriment\AI_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\AI_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\AI_HC_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\OR_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\OR_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\OR_HC_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\files\Files_txt\OR_HC_P0{testPerson}_FIBQ.txt',
 
-f'eye_tracking_expiriment\AI_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\AI_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\AI_SK_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\OR_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\OR_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\OR_SK_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\files\Files_txt\AI_SK_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\files\Files_txt\OR_SK_P0{testPerson}_FIBQ.txt',
 
-f'eye_tracking_expiriment\AI_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\AI_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\AI_KB_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\OR_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\OR_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\OR_KB_P0{testPerson}_FIBQ.txt'
+f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\files\Files_txt\AI_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\files\Files_txt\AI_KB_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\files\Files_txt\OR_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\files\Files_txt\OR_KB_P0{testPerson}_FIBQ.txt'
 
 ]
 texts=[]
