@@ -24,13 +24,13 @@ Sequence = ['eye_tracking_expiriment\start.txt',
             
             
 f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\files\Files_txt\OR_HC_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_FIBQ.txt',
 
-f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\files\Files_txt\AI_SK_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\files\Files_txt\OR_SK_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_FIBQ.txt',
 
-f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\files\Files_txt\AI_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\files\Files_txt\AI_KB_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\files\Files_txt\OR_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\files\Files_txt\OR_KB_P0{testPerson}_FIBQ.txt'
+f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_FIBQ.txt'
 
 ]
 texts=[]
@@ -285,11 +285,11 @@ gaze_stuff = [
 
 
 def fetch_text_file(): # navn på filen. 
-    tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\","")
+    tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\files\Files_txt\\","")
     return tempSeq
 
 def fetch_passage_number(): # index på hvilken fil det er.
-    seq = Sequence[current_text_index].replace("eye_tracking_expiriment\\","")
+    seq = Sequence[current_text_index].replace("eye_tracking_expiriment\\files\Files_txt\\","")
     if seq == "start.txt":
         return 0
     else:
@@ -310,7 +310,7 @@ def fetch_font(): # Skrifttype
 
 def fetch_author():
     #eye_tracking_expiriment\Ai_HC_P01_text.txt  Ai_
-    tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\","")
+    tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\files\Files_txt\\","")
     tempSeq = tempSeq.replace(tempSeq[:3],"")
     if tempSeq == "rt":
         return "Start"
@@ -420,7 +420,6 @@ def import_additional_features(features):
 
     df_matched_data = pd.DataFrame(matched_data, columns=["Reading","text_file","passage_index","font_size","font_name","Author","AI","Label"])
     df_combined = pd.concat([df_csv, df_matched_data], axis=1)
-
     df_combined.to_csv(filename, index=False)
 
 def start_gaze_tracking():
