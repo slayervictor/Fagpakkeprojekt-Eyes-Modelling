@@ -19,7 +19,7 @@ import tkinter as tk
 def read_text(filen):
     with open(filen, 'r', encoding='utf-8') as file:
         return file.read()
-testPerson = 2
+testPerson = 1
 Sequence = ['eye_tracking_expiriment\start.txt',
             
             
