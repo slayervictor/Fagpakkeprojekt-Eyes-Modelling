@@ -40,7 +40,7 @@ for file in Sequence:
 
 # Setting the font and size
 font_family=['Arial','Times New Roman']
-font_size=[16,12]
+font_size=[20,16]
 fontIndex = 0
 # Ændre til [1,1,passagetal], når vi kører anden omgang af eksperimenter
 
@@ -104,7 +104,7 @@ canvas.pack()
 # Start position for the text
 
 x_position = 250
-y_position = 0
+y_position = 100
 
 # Function to draw text with uniform appearance
 def draw_text():
@@ -418,12 +418,18 @@ def import_additional_features(features):
     csv_file_path = filename
     df_csv = pd.read_csv(csv_file_path)
     matched_data = []
+    last_matched_index = 0  # Keep track of the index of the last matched feature
+    
     for index, row in df_csv.iterrows():
-        timestamp = round(row[0]) 
-        matching_row = next((x for x in features if round(x[0]) == timestamp), None)
-        if matching_row:
-            matched_data.append(matching_row[1:])  
-
+        timestamp = round(row[0])
+        
+        # Start searching for matches from the last matched index
+        for i in range(last_matched_index, len(features)):
+            if round(features[i][0]) == timestamp:
+                matched_data.append(features[i][1:])
+                last_matched_index = i + 1  # Update the last matched index
+                break
+        
     df_matched_data = pd.DataFrame(matched_data, columns=["Reading","text_file","passage_index","font_size","font_name","Author","AI","Label"])
     df_combined = pd.concat([df_csv, df_matched_data], axis=1)
     df_combined.to_csv(filename, index=False)
