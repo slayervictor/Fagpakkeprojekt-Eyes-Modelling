@@ -40,7 +40,7 @@ for file in Sequence:
 
 # Setting the font and size
 font_family=['Arial','Times New Roman']
-font_size=[20,16]
+font_size=[16,12]
 fontIndex = 0
 # Ændre til [1,1,passagetal], når vi kører anden omgang af eksperimenter
 
@@ -98,20 +98,26 @@ def close_window(event=None):
 
 # Create the text widget
 
-canvas = tk.Canvas(root, width=1600, height=1200)
+canvas = tk.Canvas(root, width=1600, height=1920)
 canvas.pack()
 
 # Start position for the text
 
 x_position = 250
-y_position = 150
+y_position = 0
 
 # Function to draw text with uniform appearance
 def draw_text():
     global current_text_index
     canvas.delete('all')
     text = texts[current_text_index]
-    canvas.create_text(x_position, y_position, text=text, font=(font_family[fontIndex], font_size[font_sizeIndex]), anchor='nw', justify='left', width=1200)
+    # Set up the uniform text appearance
+    font = (font_family[fontIndex], font_size[font_sizeIndex])  # Use the font details determined elsewhere in your script
+    wrap_length = 1200
+    
+    # Display the text on the canvas, with text wrapping and justified left
+    canvas.create_text(x_position, y_position, anchor="nw", text=text, font=font, justify='left', width=wrap_length)
+
     canvas.update()
 
 
@@ -285,11 +291,11 @@ gaze_stuff = [
 
 
 def fetch_text_file(): # navn på filen. 
-    tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\","")
+    tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\files\Files_txt\\","")
     return tempSeq
 
 def fetch_passage_number(): # index på hvilken fil det er.
-    seq = Sequence[current_text_index].replace("eye_tracking_expiriment\\","")
+    seq = Sequence[current_text_index].replace("eye_tracking_expiriment\\files\Files_txt\\","")
     if seq == "start.txt":
         return 0
     else:
@@ -310,7 +316,7 @@ def fetch_font(): # Skrifttype
 
 def fetch_author():
     #eye_tracking_expiriment\Ai_HC_P01_text.txt  Ai_
-    tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\","")
+    tempSeq = Sequence[current_text_index].replace("eye_tracking_expiriment\\files\Files_txt\\","")
     tempSeq = tempSeq.replace(tempSeq[:3],"")
     if tempSeq == "rt":
         return "Start"
