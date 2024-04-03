@@ -44,7 +44,7 @@ for file in Sequence:
 
 # Setting the font and size
 font_family=['Arial','Times New Roman']
-font_size=[20,16]
+font_size=[22,18]
 fontIndex = 0
 # Ændre til [1,1,passagetal], når vi kører anden omgang af eksperimenter
 
