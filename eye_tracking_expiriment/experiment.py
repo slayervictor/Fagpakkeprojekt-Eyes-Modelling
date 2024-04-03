@@ -6,9 +6,9 @@ license_file = licensefile.license_file
 existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if file.startswith('gaze_data'))
 
 
-testPerson = 1
+testPerson = 2
 testPersonName = "Voldemort"
-filename = f'eye_tracking_expiriment\data\gaze_data_{testPerson}_{testPersonName}.csv'
+filename = f'eye_tracking_expiriment\data\gaze_data_{testPersonName}_{testPerson}.csv'
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
 import numpy as np
