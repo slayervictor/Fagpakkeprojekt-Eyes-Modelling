@@ -4,7 +4,11 @@ import os
 import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
 existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if file.startswith('gaze_data'))
-filename = f'eye_tracking_expiriment\data\gaze_data{existing_files}.csv'
+
+
+testPerson = 1
+testPersonName = "Voldemort"
+filename = f'eye_tracking_expiriment\data\gaze_data_{testPerson}_{testPersonName}.csv'
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
 import numpy as np
@@ -19,7 +23,7 @@ import tkinter as tk
 def read_text(filen):
     with open(filen, 'r', encoding='utf-8') as file:
         return file.read()
-testPerson = 1
+
 Sequence = ['eye_tracking_expiriment\start.txt',
             
             
@@ -428,6 +432,7 @@ def import_additional_features(features):
             if round(features[i][0]) == timestamp:
                 matched_data.append(features[i][1:])
                 last_matched_index = i + 1  # Update the last matched index
+                print(f"Progress: {round((i/len(features))*100)}%")
                 break
         
     df_matched_data = pd.DataFrame(matched_data, columns=["Reading","text_file","passage_index","font_size","font_name","Author","AI","Label"])
