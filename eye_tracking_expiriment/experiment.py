@@ -139,7 +139,7 @@ def close_window(event=None):
 
 # Create the text widget
 
-canvas = tk.Canvas(root, width=1600, height=1920)
+canvas = tk.Canvas(root, width=2000, height=1920)
 canvas.pack()
 
 # Start position for the text
@@ -154,7 +154,7 @@ def draw_text():
     text = texts[current_text_index]
     # Set up the uniform text appearance
     font = (font_family[fontIndex], font_size[font_sizeIndex])  # Use the font details determined elsewhere in your script
-    wrap_length = 1200
+    wrap_length = 1600
     
     # Display the text on the canvas, with text wrapping and justified left
     canvas.create_text(x_position, y_position, anchor="nw", text=text, font=font, justify='left', width=wrap_length)
