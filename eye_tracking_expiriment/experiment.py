@@ -6,7 +6,7 @@ license_file = licensefile.license_file
 existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if file.startswith('gaze_data'))
 
 
-testPerson = 2
+testPerson = 5
 testPersonName = "Voldemort"
 filename = f'eye_tracking_expiriment\data\gaze_data_{testPersonName}_{testPerson}.csv'
 
@@ -102,7 +102,7 @@ def close_window(event=None):
 
 # Create the text widget
 
-canvas = tk.Canvas(root, width=1600, height=1920)
+canvas = tk.Canvas(root, width=2000, height=1920)
 canvas.pack()
 
 # Start position for the text
@@ -117,7 +117,7 @@ def draw_text():
     text = texts[current_text_index]
     # Set up the uniform text appearance
     font = (font_family[fontIndex], font_size[font_sizeIndex])  # Use the font details determined elsewhere in your script
-    wrap_length = 1200
+    wrap_length = 1600
     
     # Display the text on the canvas, with text wrapping and justified left
     canvas.create_text(x_position, y_position, anchor="nw", text=text, font=font, justify='left', width=wrap_length)
