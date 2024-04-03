@@ -5,9 +5,12 @@ import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
 existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if file.startswith('gaze_data'))
 
-
-testPerson = 5
-testPersonName = "Voldemort"
+# Vindue lukket
+# Gardiner for
+# fuld lysstyrke på pc
+# kalibreret eyetracker
+testPerson = 2
+testPersonName = "Alexander"
 filename = f'eye_tracking_expiriment\data\gaze_data_{testPersonName}_{testPerson}.csv'
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
@@ -23,6 +26,68 @@ import tkinter as tk
 def read_text(filen):
     with open(filen, 'r', encoding='utf-8') as file:
         return file.read()
+
+
+# Setting the font and size
+font_family=['Arial','Times New Roman']
+font_size=[22,18]
+fontIndex = 0
+# Ændre til [1,1,passagetal], når vi kører anden omgang af eksperimenter
+
+def modStuff(tp,fontBool):
+    if tp <= 10:
+        if fontBool:
+            if tp%4 == 0:
+                return 0
+            elif tp%4 == 1: 
+                return 0
+            elif tp%4 == 2:
+                return 1
+            elif tp%4 == 3:
+                return 1
+        else:
+            if tp%4 == 0:
+                return 1
+            elif tp%4 == 1: 
+                return 0
+            elif tp%4 == 2:
+                return 0
+            elif tp%4 == 3:
+                return 1
+    else:
+        tp = tp-10
+        if fontBool:
+            if tp%4 == 0:
+                return 1
+            elif tp%4 == 1: 
+                return 1
+            elif tp%4 == 2:
+                return 0
+            elif tp%4 == 3:
+                return 0
+        else:
+            if tp%4 == 0:
+                return 0
+            elif tp%4 == 1: 
+                return 1
+            elif tp%4 == 2:
+                return 1
+            elif tp%4 == 3:
+                return 0
+
+
+def over10ReturnMinus10(ti):
+    if ti > 10:
+        return ti-10
+    else:
+        return ti
+
+    
+
+            
+fontDetails = [[modStuff(testPerson,False),modStuff(testPerson,True),over10ReturnMinus10(testPerson)]] # Hvilken passage der skal have hvilken font, eks [[font_family_index , font_size_index , passage],[...]]  -  default (index 0) er Arial
+testPerson = over10ReturnMinus10(testPerson)
+font_sizeIndex = 0
 
 Sequence = ['eye_tracking_expiriment\start.txt',
             
@@ -42,29 +107,7 @@ texts=[]
 for file in Sequence:
     texts.append(read_text(file))
 
-# Setting the font and size
-font_family=['Arial','Times New Roman']
-font_size=[20,16]
-fontIndex = 0
-# Ændre til [1,1,passagetal], når vi kører anden omgang af eksperimenter
 
-def modStuff(tp,fontBool):
-    if fontBool:
-        if tp%4 == 0:
-            return 0
-        elif tp%4 == 1: 
-            return 0
-        elif tp%4 == 2:
-            return 1
-        elif tp%4 == 3:
-            return 1
-    else:
-        return tp%2
-    
-
-            
-fontDetails = [[modStuff(testPerson,False),modStuff(testPerson,True),1]] # Hvilken passage der skal have hvilken font, eks [[font_family_index , font_size_index , passage],[...]]  -  default (index 0) er Arial
-font_sizeIndex = 0
 
 
 current_text_index = 0
