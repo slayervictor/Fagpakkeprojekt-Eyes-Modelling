@@ -6,7 +6,7 @@ license_file = licensefile.license_file
 existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if file.startswith('gaze_data'))
 
 
-testPerson = 2
+testPerson = 1
 testPersonName = "Voldemort"
 filename = f'eye_tracking_expiriment\data\gaze_data_{testPersonName}_{testPerson}.csv'
 
@@ -49,21 +49,58 @@ fontIndex = 0
 # Ændre til [1,1,passagetal], når vi kører anden omgang af eksperimenter
 
 def modStuff(tp,fontBool):
-    if fontBool:
-        if tp%4 == 0:
-            return 0
-        elif tp%4 == 1: 
-            return 0
-        elif tp%4 == 2:
-            return 1
-        elif tp%4 == 3:
-            return 1
+    if tp <= 10:
+        if fontBool:
+            if tp%4 == 0:
+                return 0
+            elif tp%4 == 1: 
+                return 0
+            elif tp%4 == 2:
+                return 1
+            elif tp%4 == 3:
+                return 1
+        else:
+            if tp%4 == 0:
+                return 1
+            elif tp%4 == 1: 
+                return 0
+            elif tp%4 == 2:
+                return 0
+            elif tp%4 == 3:
+                return 1
     else:
-        return tp%2
+        tp = tp-10
+        if fontBool:
+            if tp%4 == 0:
+                return 1
+            elif tp%4 == 1: 
+                return 1
+            elif tp%4 == 2:
+                return 0
+            elif tp%4 == 3:
+                return 0
+        else:
+            if tp%4 == 0:
+                return 0
+            elif tp%4 == 1: 
+                return 1
+            elif tp%4 == 2:
+                return 1
+            elif tp%4 == 3:
+                return 0
+
+
+def over10ReturnMinus10(ti):
+    if ti > 10:
+        return ti-10
+    else:
+        return ti
+
     
 
             
-fontDetails = [[modStuff(testPerson,False),modStuff(testPerson,True),1]] # Hvilken passage der skal have hvilken font, eks [[font_family_index , font_size_index , passage],[...]]  -  default (index 0) er Arial
+fontDetails = [[modStuff(testPerson,False),modStuff(testPerson,True),over10ReturnMinus10(testPerson)]] # Hvilken passage der skal have hvilken font, eks [[font_family_index , font_size_index , passage],[...]]  -  default (index 0) er Arial
+testPerson = over10ReturnMinus10(testPerson)
 font_sizeIndex = 0
 
 
