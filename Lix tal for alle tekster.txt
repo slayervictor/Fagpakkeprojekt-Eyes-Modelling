@@ -5,170 +5,176 @@ Spørgsmål er besvaret af vores gode kammerat :)
 
 AI_HC_P01
 Lix:42
-MCQ: 
-FIB: 
+MCQ: b, b, a, d, d
+Answers: A cobbler, a fairy, a pair of magical shoes, a forest, it depends on finding joy in simple things.
+FIB:
+Answers: Cobbler, fairy, magical shoes, help those in need, making others happy.
+
 AI_HC_P02
 Lix:42
-MCQ:
-FIB: 
+MCQ:c, b, b, a, b
+FIB: Baker, Snowstorm, bread, as a friend, a confidant, and a beacon of hope, kindness
 AI_HC_P03
 Lix:46
-MCQ:
-FIB: 
+MCQ:b, b, a, a, a
+FIB: Florist, Rose, Sunny spot, Outside, Dreams and desires
 AI_HC_P04
 Lix:37
-MCQ: 
-FIB:
+MCQ: d, c, c, c, c
+FIB: clockmaker, peculiar, repair, fleeting, storytellers
 AI_HC_P05
 Lix:38
-MCQ:
-FIB:
+MCQ:b, b, a, b, c
+FIB:Fisherman, seashell, underwater world, wonder, endless.
 AI_HC_P06
 Lix:39
-MCQ:
-FIB:
+MCQ:c, a, b, b, b
+FIB: Owl, feather, sky, wonder, endless
 
 AI_KB_P01
 Lix:47
-MCQ:
-FIB:
+MCQ: b,b,b,c,c
+FIB: Lyngby, bakery, capturing, artists, baking
 AI_KB_P02
 Lix:44
-MCQ:
-FIB:
+MCQ: c,c,c,b,c
+Answers: Violinist, Lars, Jutland, awe, the power of her music
+FIB: Violinist, Lars, Jutland, awe, Copenhagen
 AI_KB_P03
 Lix:47
-MCQ:
-FIB:
+MCQ: b,d,c,b,c
+Answers: Florist, Soren, A bouquet, She was moved to tears, She realized the power of her craft.
+
+FIB: Florist, Soren, bouquet, tears, received.
 AI_KB_P04
 Lix:37
-MCQ:
-FIB:
+MCQ: c,b,b,b,c
+FIB:Lighthouse keeper, Skagen, storm, thanked, importance
 AI_KB_P05
 Lix:43
-MCQ:
-FIB:
+MCQ: b,c,c,c,c
+FIB: Blacksmith, Roskilde, Freya, loom, collaboration
 AI_KB_P06
 Lix:43
-MCQ:
-FIB:
+MCQ: b,d,b,c,c
+FIB: librarian. Helsingør. Emil. brave knight, fearsome dragon. stories
 AI_KB_P07
 Lix:44
-MCQ:
-FIB:
+MCQ: b,d,c,c,c
+FIB: potter, Aarhus, Ida, pottery, teaching
 AI_KB_P08
 Lix:47
-MCQ:
-FIB:
+MCQ: b,c,c,c,c
+FIB: Clockmaker, Ribe, Astrid, clock, harmony
 AI_KB_P09
 Lix:46
-MCQ:
-FIB:
+MCQ: b,d,c,c,c
+FIB: sculptor, Vejle, Mette, studio, connection
 AI_KB_P10
 Lix:45
-MCQ:
-FIB:
+MCQ: b,d,c,c,c
+FIB: Baker, Aalborg, Sofie, baking class, impact
 
 AI_SK_P01
 Lix:44
-MCQ:
-FIB:
+MCQ: b,b,a,b,b
+FIB: Intellect, ignorance, humanity, creating, purpose
 AI_SK_P02
 Lix:43
-MCQ:
-FIB:
+MCQ: b,b,c,c,c
+FIB: intellect, reasoning, purpose, crisis, faith
 AI_SK_P03
 Lix:41
-MCQ:
-FIB:
+MCQ: b,b,c,c,c
+FIB: Wisdom, reasoning, peace, questions, faith
 AI_SK_P04
 Lix:43
-MCQ:
-FIB:
+MCQ: b,b,c,c,c
+FIB:courage, logic, liberation, questions, faith
 AI_SK_P05
 Lix:39
-MCQ:
-FIB:
+MCQ:b,b,c,c,c
+FIB:compassion, reasoning, connection, questions, faith
 AI_SK_P06
 Lix:44
-MCQ:
-FIB:
+MCQ: b,b,c,c,c
+FIB: integrity, reasoning, clarity, questions, faith
 AI_SK_P07
 Lix:41
-MCQ:
-FIB:
+MCQ: b,b,b,d,c
+FIB: Watchmaker, Helsingør, Watch, Solace, Absurd
 
 OR_HC_P01
 Lix:28
-MCQ:
-FIB:
+MCQ: c,b,b,b,b
+FIB: Manor house, eggshells, moat, water, swimming
 OR_HC_P02
 Lix:28
-MCQ:
-FIB:
+MCQ:a,a,b,a,b
+FIB: spanish blood, kicked, im so ugly, bowing his best, marriage
 OR_HC_P03
 Lix:37
-MCQ:
-FIB:
+MCQ: a,b,b,a,b
+FIB: balsam, open, dark, heart, coffin
 OR_HC_P04
 Lix:33
-MCQ:
-FIB:
+MCQ: a,d,d,a,c
+FIB: sunday, dead, wind, shed, fish
 OR_HC_P05
 Lix:46
-MCQ:
-FIB:
+MCQ: b,a,b,b,b
+FIB: splendor, romantic, proclamation, owl, touched
 
 OR_KB_P01
 Lix:45
-MCQ:
-FIB:
+MCQ: b,c,b,b,b
+FIB: safaris, Mombasa, homogeneous, Berlin, Terence and Plautus
 OR_KB_P02
 Lix:64
-MCQ:
-FIB:
+MCQ: c,b,b,b,b
+FIB: wild, Africa, Farah, wild, covenant
 OR_KB_P03
 Lix:49
-MCQ:
-FIB:
+MCQ: B,B,B,A,B
+FIB:Minhaj et Talibin, outside their own country and in the service of other people, Mohammed, Isa ben Mariammo, shellshock
 OR_KB_P04
 Lix:49
-MCQ:
-FIB:
+MCQ: C,A,D,C,B
+FIB: profit, nave, fortnight, irresistible, lions
 OR_KB_P05
 Lix:46
-MCQ:
-FIB:
+MCQ:B,B,A,C,C
+FIB: doe, Poor-Box, Virgin, born, Ahamed, called Saufe
 OR_KB_P06
 Lix:51
-MCQ:
-FIB:
+MCQ: b,b,c,b,b
+FIB: Fathima, coughs, Salvarsan, protection, child
 OR_KB_P07
 Lix:49
-MCQ:
-FIB:
+MCQ: A,C,B,B,C
+FIB: Beautiful, deeply familiar, infinite space. wild, incalculable, create forces, the imagination . desert
 
 OR_SK_P01
 Lix:39
-MCQ:
-FIB:
+MCQ: c,b,b,b,a
+FIB:beautiful music, swineherd, melancholy, busy, Old Testament,
 OR_SK_P02
 Lix:53
-MCQ:
-FIB:
+MCQ: c,c,c,b,a
+FIB: Evening, five, young person, Dressmaker, Confectioner's
 OR_SK_P03
 Lix:48
-MCQ:
-FIB:
+MCQ:b,b,b,a,b
+FIB: Banquets, dancers, thinkable, Wine, Fountain
 OR_SK_P04
 Lix:43
-MCQ:
-FIB:
+MCQ:b,a,a,a,c
+FIB:Unrequited love, bliss, ideality, Constantin, affair of love
 OR_SK_P05
 Lix:39
-MCQ:
-FIB:
+MCQ: c,b,b,c,c
+FIB:speak, "the joke", absolute, Aesthetic, twaddling
 OR_SK_P06
 Lix:46
-MCQ:
-FIB:
+MCQ: b,b,b,c,b
+FIB:predicate, gallantry, reciprocal, illusion, green-grocer. 
