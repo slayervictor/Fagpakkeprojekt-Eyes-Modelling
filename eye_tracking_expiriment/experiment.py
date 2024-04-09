@@ -5,9 +5,12 @@ import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
 existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if file.startswith('gaze_data'))
 
-
-testPerson = 
-testPersonName = "Filip"
+# Vindue lukket
+# Gardiner for
+# fuld lysstyrke på pc
+# kalibreret eyetracker
+testPerson = 9
+testPersonName = "Alexander"
 filename = f'eye_tracking_expiriment\data\gaze_data_{testPersonName}_{testPerson}.csv'
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
