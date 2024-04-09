@@ -11,6 +11,10 @@ existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if
 # kalibreret eyetracker
 testPerson = 7
 testPersonName = "Johan"
+# Efter experiment, hvis fil stor. Lav det til en zip fil.
+# Tilføj csv filen i gitignore.
+testPerson = 8
+testPersonName = "Bengisu"
 filename = f'eye_tracking_expiriment\data\gaze_data_{testPersonName}_{testPerson}.csv'
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
