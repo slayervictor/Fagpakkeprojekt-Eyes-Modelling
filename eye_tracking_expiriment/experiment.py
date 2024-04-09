@@ -5,12 +5,9 @@ import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
 existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if file.startswith('gaze_data'))
 
-# Vindue lukket
-# Gardiner for
-# fuld lysstyrke på pc
-# kalibreret eyetracker
-testPerson = 4
-testPersonName = "Oskar"
+
+testPerson = 
+testPersonName = "Filip"
 filename = f'eye_tracking_expiriment\data\gaze_data_{testPersonName}_{testPerson}.csv'
 
 # from psychopy import prefs, visual, core, event, monitors, tools, logging
@@ -27,10 +24,27 @@ def read_text(filen):
     with open(filen, 'r', encoding='utf-8') as file:
         return file.read()
 
+Sequence = ['eye_tracking_expiriment\start.txt',
+            
+            
+f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_FIBQ.txt',
+
+f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_FIBQ.txt',
+
+f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_FIBQ.txt'
+
+]
+texts=[]
+
+for file in Sequence:
+    texts.append(read_text(file))
 
 # Setting the font and size
 font_family=['Arial','Times New Roman']
-font_size=[22,18]
+font_size=[20,16]
 fontIndex = 0
 # Ændre til [1,1,passagetal], når vi kører anden omgang af eksperimenter
 
@@ -88,26 +102,6 @@ def over10ReturnMinus10(ti):
 fontDetails = [[modStuff(testPerson,False),modStuff(testPerson,True),over10ReturnMinus10(testPerson)]] # Hvilken passage der skal have hvilken font, eks [[font_family_index , font_size_index , passage],[...]]  -  default (index 0) er Arial
 testPerson = over10ReturnMinus10(testPerson)
 font_sizeIndex = 0
-
-Sequence = ['eye_tracking_expiriment\start.txt',
-            
-            
-f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_FIBQ.txt',
-
-f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_FIBQ.txt',
-
-f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_FIBQ.txt'
-
-]
-texts=[]
-
-for file in Sequence:
-    texts.append(read_text(file))
-
-
 
 
 current_text_index = 0
