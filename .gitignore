@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+
 # C extensions
 *.so
 
@@ -81,9 +83,15 @@ target/
 # IPython
 profile_default/
 ipython_config.py
+
+# Experiment
 Licenses
 fonts
 fonts181023
+gaze_data_Oskar_4.csv
+gaze_data_Alexander_2.csv
+
+
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:
