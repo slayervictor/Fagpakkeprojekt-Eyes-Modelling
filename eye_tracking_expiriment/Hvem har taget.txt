@@ -4,10 +4,10 @@
 4 Oskar
 5 Tobias
 6
-7
+7 Johan
 8Bengisu
 9
-10
+10 lovro
 11 
 12 Muhammad
 13 Victor
