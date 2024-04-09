@@ -9,7 +9,7 @@ existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if
 # Gardiner for
 # fuld lysstyrke på pc
 # kalibreret eyetracker
-testPerson = 1
+testPerson = 13
 testPersonName = "Victor"
 filename = f'eye_tracking_expiriment\data\gaze_data_{testPersonName}_{testPerson}.csv'
 
