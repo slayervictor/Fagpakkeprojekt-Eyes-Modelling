@@ -1,0 +1,25 @@
+Testperson 2.
+AG.
+Text 1
+MCQ: C,B,B,A,B
+Fib:Baker, Snowstorm, bread, friend, kindness
+
+Text 2
+MCQ:A,A,B,A,B
+Fib: Spanish blood, kicked, am so ugly, ?buying the best?, marriage
+
+Text 3
+MCQ:B,B,C,C,C
+Fib:Interlect, reasoning, purpose, crisis, faith
+
+Text 4
+MCQ: C,C,C,B,A
+Fib:EVening, five, the young person, the dressmaker, confectioner
+
+Text 5
+MCQ: C,C,C,B,C
+Fib: Violinist, lars, jutland, awe, copenhagen
+
+Text 6
+MCQ: C,C,B,B,B
+Fib:Wild, africa, farah, wild, covenant
