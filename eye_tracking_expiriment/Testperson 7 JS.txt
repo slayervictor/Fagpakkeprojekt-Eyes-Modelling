@@ -1,0 +1,20 @@
+testperson 7
+johan
+text 1
+mcq: c, b, b, b, b
+fib: thomas, king, song, shop, could be
+text 2. 
+mcq b,c, c, c, c
+fib: laborers wife, toy, eat, half, sea
+text 3. 
+mcq: b, b, b, d,c
+fib, watchmaker, helsingør, watch, solace, absurd, 
+text 4
+mcq: a, b, c, c, a
+fib: yoke(æggeblomme), wishing table, one course, hat, ex templo
+text 5
+mcq: b, d, c, c, c
+fib: potter, århus, ida, pottery, teaching
+text 6
+mcq: a, c, b, b, c 
+fib: beautiful, deeply and sweetly familier, space, (wild, incalculable, creative forces, imagination), desert hunter, somali
