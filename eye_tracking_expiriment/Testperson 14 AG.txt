@@ -1,0 +1,21 @@
+Testperson 14.
+AG.
+Text 1
+MCQ: D,C,C,C,C
+Fib:Clockmaker, peculiar, repair, fleeting, storytellers
+Text 2
+MCQ:A,D,B,C,C
+Fib: Sunday, dead, wind, thatch, fish
+Text 3
+MCQ:A,B,C,C,C
+Fib:Courage, Reasoning, liberation, questions, faith
+Text 4
+MCQ: B,D,a,A,C
+Fib:Unrequited love, bliss, ideality, Constantin, affair
+Text 5
+MCQ: C,B,B,B,C
+Fib: Man of solitude eller lighthousekeeper, skagen, storm, thanked, importance 
+
+Text 6
+MCQ: D,A,A,C,A
+Fib:profit, nave, fortnight, irresistible, lions

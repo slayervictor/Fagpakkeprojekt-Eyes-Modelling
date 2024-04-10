@@ -1,70 +1,70 @@
 Oskar 4 (ordblind med linser) 
-D
-C
-C
-C
-C
-Clockmaker
-Peculiar
-Repair
-Fleeting
-Storytellers
+D ✓
+C ✓
+C ✓
+C ✓
+C ✓
+Clockmaker ✓
+Peculiar ✓
+Repair ✓
+Fleeting ✓
+Storytellers ✓
 
 
-A
-D
-D
-A
-C
-Sunday 
-Dead
-Wind
-Pass (gav op) 
-Fish
+A ✓
+D ✓
+D ✓
+A ✓
+C ✓
+Sunday ✓
+Dead ✓
+Wind ✓
+Pass (gav op) X
+Fish ✓
 
-B
-B
-C
-C
-C
-Courage
-Reasoning
-Liberation
-Questions 
-Faith
+B ✓
+B ✓
+C ✓
+C ✓
+C ✓
+Courage ✓
+Reasoning X
+Liberation ✓
+Questions ✓
+Faith ✓
 
-B
-A
-A
-C
-C
-Unrequited love
-Bliss
-Ideality
-Constantin 
-Affair
+B ✓
+A ✓
+A ✓
+C X
+C ✓
+Unrequited love ✓
+Bliss ✓
+Ideality ✓
+Constantin ✓
+Affair ✓
 
 (den er nem at læse) 
-C
-B
-B
-B
-C
-A man of solitude
-Skagen
-Storm 
-Thanked
-Importance
+C ✓
+B ✓
+B ✓
+B ✓
+C ✓
+A man of solitude X
+Skagen ✓
+Storm ✓
+Thanked ✓
+Importance ✓
 
 
-D
-A
-A
-C
-B
-Profit
-Nave
-Fortnight
-Irrisistable 
-Lions 
+D X
+A ✓
+A X
+C ✓
+B ✓
+Profit ✓
+Nave ✓
+Fortnight ✓
+Irrisistable ✓
+Lions ✓
 
