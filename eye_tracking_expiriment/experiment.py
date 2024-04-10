@@ -11,7 +11,7 @@ existing_files = sum(1 for file in os.listdir('eye_tracking_expiriment\data') if
 # kalibreret eyetracker
 # Efter experiment, hvis fil stor. Lav det til en zip fil.
 # Tilføj csv filen i gitignore.
-testPerson = 8
+testPerson = 18
 testPersonName = "slet-Test"
 filename = f'eye_tracking_expiriment\data\gaze_data_{testPersonName}_{testPerson}.csv'
 
@@ -83,7 +83,13 @@ def over10ReturnMinus10(ti):
     else:
         return ti
 
-    
+
+def testPerson1020(tp):
+    if tp == 20 or tp == 10:
+        return str(tp)
+    else:
+        return "0"+str(tp)
+
 
             
 fontDetails = [[modStuff(testPerson,False),modStuff(testPerson,True),over10ReturnMinus10(testPerson)]] # Hvilken passage der skal have hvilken font, eks [[font_family_index , font_size_index , passage],[...]]  -  default (index 0) er Arial
@@ -92,22 +98,20 @@ font_sizeIndex = 0
 Sequence = ['eye_tracking_expiriment\start.txt',
             
             
-f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P{testPerson1020(testPerson)}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P{testPerson1020(testPerson)}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P{testPerson1020(testPerson)}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P{testPerson1020(testPerson)}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P{testPerson1020(testPerson)}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P{testPerson1020(testPerson)}_FIBQ.txt',
 
-f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P0{testPerson}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P{testPerson1020(testPerson)}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P{testPerson1020(testPerson)}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_SK_P{testPerson1020(testPerson)}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P{testPerson1020(testPerson)}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P{testPerson1020(testPerson)}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_SK_P{testPerson1020(testPerson)}_FIBQ.txt',
 
-f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P0{testPerson}_FIBQ.txt',
-f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P0{testPerson}_FIBQ.txt'
+f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P{testPerson1020(testPerson)}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P{testPerson1020(testPerson)}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_KB_P{testPerson1020(testPerson)}_FIBQ.txt',
+f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P{testPerson1020(testPerson)}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P{testPerson1020(testPerson)}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_KB_P{testPerson1020(testPerson)}_FIBQ.txt'
 
 ]
 texts=[]
 
 for file in Sequence:
     texts.append(read_text(file))
-
-
 
 current_text_index = 0
 max_current_text_index = 0
