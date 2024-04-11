@@ -1,0 +1,20 @@
+testperson 10.
+LA
+Text 1
+mcq: b, b, c, c, b
+fib: king, sun og morning dew, golden, skies,  og sun og flowers, wisdom
+text 2
+mcq: b, b, a, b, b,
+fib: zealand, blotting paper,  fountain, hills, travel
+text 3
+mcq : b, c, b, d, c
+fib: lighthouse keeper, skagen, sailor, a sense of kinship, solitude
+text 4 
+mcq: b, a, b, d, d
+fib: comical fashion, explain, lovers,  kissing, involentary(ufrivilligt på dansk)
+txt 5
+mcq b, d, c, c, c
+fib: baker, aalborg, sofie, class, impact,
+text 6.
+mcq : a, d, c, b, c, 
+fib : clean og neat, chess, money, arsenic, book

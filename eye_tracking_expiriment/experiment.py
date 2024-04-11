@@ -96,8 +96,7 @@ fontDetails = [[modStuff(testPerson,False),modStuff(testPerson,True),over10Retur
 testPerson = over10ReturnMinus10(testPerson)
 font_sizeIndex = 0
 Sequence = ['eye_tracking_expiriment\start.txt',
-            
-            
+                        
 f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P{testPerson1020(testPerson)}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P{testPerson1020(testPerson)}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\AI_HC_P{testPerson1020(testPerson)}_FIBQ.txt',
 f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P{testPerson1020(testPerson)}_text.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P{testPerson1020(testPerson)}_MCQ.txt',f'eye_tracking_expiriment\\files\Files_txt\OR_HC_P{testPerson1020(testPerson)}_FIBQ.txt',
 
