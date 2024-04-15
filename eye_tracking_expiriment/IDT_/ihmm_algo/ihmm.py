@@ -1,7 +1,7 @@
 
 from .baum_welch import Baum_Welch
 from .viterbi import Viterbi
-from ivt import IVT
+from IDT_.ivt import IVT
 
 import matplotlib.pyplot as plt
 import pandas as pd
