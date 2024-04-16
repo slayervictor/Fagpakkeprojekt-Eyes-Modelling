@@ -1,5 +1,5 @@
 
-from common import compute_velocity
+from IDT_.common import compute_velocity
 
 import matplotlib.pyplot as plt
 import pandas as pd
