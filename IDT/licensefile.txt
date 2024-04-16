@@ -1,0 +1,1 @@
+license_file = "Licenses\license_key_00395217_-_DTU_Compute_IS404-100106341184"

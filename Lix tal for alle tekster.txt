@@ -9,7 +9,6 @@ MCQ: b, b, a, d, d
 Answers: A cobbler, a fairy, a pair of magical shoes, a forest, it depends on finding joy in simple things.
 FIB:
 Answers: Cobbler, fairy, magical shoes, help those in need, making others happy.
-
 AI_HC_P02
 Lix:42
 MCQ:c, b, b, a, b
@@ -30,6 +29,22 @@ AI_HC_P06
 Lix:39
 MCQ:c, a, b, b, b
 FIB: Owl, feather, sky, wonder, endless
+AI_HC_P07
+Lix:25
+MCQ:
+FIB: 
+AI_HC_P08
+Lix:26
+MCQ:
+FIB: 
+AI_HC_P09
+Lix:36
+MCQ:
+FIB: 
+AI_HC_P10
+Lix:33
+MCQ:
+FIB: 
 
 AI_KB_P01
 Lix:47
@@ -44,7 +59,6 @@ AI_KB_P03
 Lix:47
 MCQ: b,d,c,b,c
 Answers: Florist, Soren, A bouquet, She was moved to tears, She realized the power of her craft.
-
 FIB: Florist, Soren, bouquet, tears, received.
 AI_KB_P04
 Lix:37
@@ -103,6 +117,18 @@ AI_SK_P07
 Lix:41
 MCQ: b,b,b,d,c
 FIB: Watchmaker, Helsingør, Watch, Solace, Absurd
+AI_SK_P08
+Lix:34
+MCQ:
+FIB: 
+AI_SK_P09
+Lix:31
+MCQ:
+FIB: 
+AI_SK_P10
+Lix:31
+MCQ:
+FIB: 
 
 OR_HC_P01
 Lix:28
@@ -124,6 +150,26 @@ OR_HC_P05
 Lix:46
 MCQ: b,a,b,b,b
 FIB: splendor, romantic, proclamation, owl, touched
+OR_HC_P06
+Lix:29
+MCQ: b,b,d,d,c
+FIB: Warton Almshouse, grass-covered rampart, (sportive,frolicsome), red,fresh
+OR_HC_P07
+Lix:29
+MCQ:
+FIB: 
+OR_HC_P08
+Lix:32
+MCQ:
+FIB: 
+OR_HC_P09
+Lix:31
+MCQ:
+FIB: 
+OR_HC_P10
+Lix:29
+MCQ:
+FIB: 
 
 OR_KB_P01
 Lix:45
@@ -153,6 +199,18 @@ OR_KB_P07
 Lix:49
 MCQ: A,C,B,B,C
 FIB: Beautiful, deeply familiar, infinite space. wild, incalculable, create forces, the imagination . desert
+OR_KB_P08
+Lix:40
+MCQ: C,A,B,C,A
+FIB: kaninu, i want to die, bedstead, hut, squatters
+OR_KB_P09
+Lix:37
+MCQ: B,C,C,B,B
+FIB: (spears, swords), Schweitzer, servants, Hunter, Somali
+OR_KB_P10
+Lix:38
+MCQ: A,B,C,B,C
+FIB: (clean, neat), chess, money, arsenic, Queen Margot
 
 OR_SK_P01
 Lix:39
@@ -178,3 +236,19 @@ OR_SK_P06
 Lix:46
 MCQ: b,b,b,c,b
 FIB:predicate, gallantry, reciprocal, illusion, green-grocer. 
+OR_SK_P07
+Lix:46
+MCQ: a,b,c,c,a
+FIB:yoke of oxen, wishing-table, one course, hat, ex templo
+OR_SK_P08
+Lix:47
+MCQ: b,b,b,b,d
+FIB:decorated, journeymen, perfumes, Aladdin, soul
+OR_SK_P09
+Lix:37
+MCQ: b,b,b,b,c
+FIB:knows, helplessness, in love, Only, blind
+OR_SK_P10
+Lix:44
+MCQ: c,a,b,c,d
+FIB:fashion, explain, lovers, kissing, involuntary
