@@ -105,6 +105,32 @@ gaze_data_Muhammad_18.csv
 gaze_data_Amalia_18.csv
 x_data_9.csv
 
+gaze_data_1_Muhammad.csv
+gaze_data_2_Alexander.csv
+gaze_data_3_Martin.csv
+gaze_data_4_Oskar.csv
+gaze_data_5_Tobias.csv
+gaze_data_6_Victor.csv
+gaze_data_7_Johan.csv
+gaze_data_8_Tobias.csv
+gaze_data_9_Bengisu.csv
+gaze_data_10_Lovro.csv
+gaze_data_11_Mads.csv
+gaze_data_12_Doktor.csv
+gaze_data_13_Victor.csv
+gaze_data_14_Alexander.csv
+gaze_data_15_Emborg.csv
+gaze_data_16_Christian.csv
+gaze_data_17_Filip.csv
+gaze_data_18_Muhammad.csv
+gaze_data_19_Tülin.csv
+gaze_data_20_Muhammad.csv
+
+
+
+
+
+
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:
