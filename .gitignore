@@ -103,7 +103,7 @@ gaze_data_Bengisu_9.csv
 gaze_data_Tobias_8.csv
 gaze_data_Muhammad_18.csv
 gaze_data_Amalia_18.csv
-
+x_data_9.csv
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
@@ -183,3 +183,5 @@ cython_debug/
 #.idea/
 eye_tracking_expiriment/data/bengisu_ 9/gaze_data_Bengisu_8.csv
 eye_tracking_expiriment/data/gaze_data_Victor_6.csv
+eye_tracking_expiriment/Ny ZIP-komprimeret mappe.zip
+eye_tracking_expiriment/x_data_9.csv
