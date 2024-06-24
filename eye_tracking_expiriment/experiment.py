@@ -1,5 +1,6 @@
 # Preface here
 #
+# used chatGPT
 import os
 import Licenses.licensefile as licensefile
 license_file = licensefile.license_file
